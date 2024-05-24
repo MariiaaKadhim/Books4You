@@ -1,3 +1,33 @@
 <%- include('../partials/header') %>
-<div> huh</div>
+
+
+<form action="/admins" method="post">
+<label for="name">Book Name</label>
+<input name="name" type="text">
+
+<label for="category">Category</label>
+<input name="category" type="text">
+
+<label for="author">Author</label>
+<input name="author" type="text">
+
+
+<label for="date">Publish Date</label>
+<input name="date" type="date">
+
+
+<label for="summary">Book Summary</label>
+<input name="summary" type="text">
+
+
+<label for="poster">Poster</label>
+<input name="poster" type="text">
+
+
+<label for="available">Available at</label>
+<input name="available" type="text">
+
+<button type="submit">Add Book</button>
+</form>
+
 <%- include('../partials/footer') %>
