@@ -1,13 +1,19 @@
 <%- include('../partials/header') %>
-<h3> ze bluthoth device</h3>
-<div>2 </div>
-<div> 2</div>
-<div> </div>
-<div> </div>
-<div> </div>
-<div> </div>
-<div> </div>
-<div> </div>
-<div> </div>
-<div> </div>
+
+<h1>Added Books List</h1>
+
+<% books.forEach(book => { %>
+<ul>
+    <li><a href="" ><%= book.name%></a>
+    </li>
+    <!-- <li>Category: <%= book.category %></li>
+    <li>Author: <%= book.author %></li>
+    <li>Publish Date: <%= book.publishDate %></li>
+    <li>Summary: <%= book.summary %></li>
+    <li>Poster: <%= book.poster %></li>
+    <li>Rating: <%= book.rating %></li> -->
+</ul>
+<% }); %>
+
+
 <%- include('../partials/footer') %>
