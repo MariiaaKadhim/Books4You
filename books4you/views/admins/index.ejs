@@ -1,15 +1,17 @@
 <%- include('../partials/header') %>
 
+<h1>Added Books List</h1>
+
 <% books.forEach(book => { %>
 <ul>
-    <li>Book name:<a href="" ><%= book.name%></a>
+    <li><a href="" ><%= book.name%></a>
     </li>
-    <li>Category: <%= book.category %></li>
+    <!-- <li>Category: <%= book.category %></li>
     <li>Author: <%= book.author %></li>
     <li>Publish Date: <%= book.publishDate %></li>
     <li>Summary: <%= book.summary %></li>
     <li>Poster: <%= book.poster %></li>
-    <li>Rating: <%= book.rating %></li>
+    <li>Rating: <%= book.rating %></li> -->
 </ul>
 <% }); %>
 
