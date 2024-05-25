@@ -1,12 +1,15 @@
 var express = require('express')
 var router = express.Router()
 const adminCtrl = require('../controllers/admins')
+const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 router.get('/index', adminCtrl.index)
 
-router.get('/new', adminCtrl.new)
+router.get('/new', ensureLoggedIn, adminCtrl.new)
 
-router.post('/', adminCtrl.create)
+// router.get('/:id', adminCtrl.show)
+
+router.post('/', ensureLoggedIn, adminCtrl.create)
 
 // router.get('/index', adminCtrl.index)
 // router.get('/new', adminCtrl.new)
