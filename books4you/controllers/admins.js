@@ -26,6 +26,12 @@ async function create(req, res) {
   }
 }
 
+// async function show(req, res) {
+//   const book = await Book.findById(req.params.id).populate('explorers')
+//   const explorers = await Explorer.find({ _id: { $nin: planet.explorers } })
+//   res.render('planets/show', { planet, explorers })
+// }
+
 module.exports = {
   index,
   new: newBook,

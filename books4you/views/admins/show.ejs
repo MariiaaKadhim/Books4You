@@ -1,11 +1,9 @@
 <%- include('../partials/header') %>
 
-<h1>Added Books List</h1>
-
 <% books.forEach(book => { %>
 <ul>
     <li>
-        <a href="/admins/<%=book._id%>"><%= book.name%></a>
+        <a href="" ><%= book.name%></a>
         <button>Delete</button>
         <button>Edite</button>
     </li>
