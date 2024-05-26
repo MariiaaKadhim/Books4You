@@ -1,10 +1,22 @@
+
 <%- include('./partials/header') %>
 
 
+
 <h1>Categories</h1>
-<h4>why</h4>
+
+
+
+<% booksCategory.forEach(category => { %>
+<ul>
+    <li><%= category.category%></li>
+    <li><%= category.id%></li>
+
+</ul>
+<% }); %>
 
 
 
 
 <%- include('./partials/footer') %>
+
