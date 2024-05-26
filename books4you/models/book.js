@@ -15,17 +15,16 @@ const bookSchema = new Schema(
     timestamps: true
   }
 )
-const bookCategorySchema = new Schema({
-  category: {
-    type: String,
-    required: true
-  },
-  id: {
-    type: Number,
-    required: true
-  },
-  book: [bookSchema]
-})
+// const bookCategorySchema = new Schema({
+//   category: {
+//     type: String,
+//     required: true
+//   },
+//   id: {
+//     type: Number,
+//     required: true
+//   },
+//   book: [bookSchema]
+// })
 
 module.exports = mongoose.model('Book', bookSchema)
-module.exports = mongoose.model('Catagory', bookCategorySchema)
