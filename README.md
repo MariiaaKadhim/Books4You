@@ -6,6 +6,12 @@
 
 #### [GitHub](https://github.com/MariiaaKadhim) | [LinkedIn](https://www.linkedin.com/in/maria-kadhim-1a38852b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
+#### [GitHub](https://github.com/Amal229) | [LinkedIn](https://www.linkedin.com/in/amal-abduljalil-9225502bb/)
+
+#### [GitHub](https://github.com/jasimSalman) | [LinkedIn]()
+
+#### [GitHub](https://github.com/jawadbri) | [LinkedIn]()
+
 ---
 
 ### **_Description_**
