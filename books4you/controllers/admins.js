@@ -31,12 +31,6 @@ async function show(req, res) {
   res.render('admins/show', { title: 'Book', book })
 }
 
-// async function show(req, res) {
-//   const book = await Book.findById(req.params.id).populate('explorers')
-//   const explorers = await Explorer.find({ _id: { $nin: planet.explorers } })
-//   res.render('planets/show', { planet, explorers })
-// }
-
 module.exports = {
   index,
   new: newBook,
@@ -45,11 +39,15 @@ module.exports = {
 }
 /*
 const editBook = (req, res) => {
-  res.render('admins/update', { title: 'Edit Book' })
-}
+  res.render('admins/update', { title: 'Edit Book' })}
+}  edit:editBook,
 async function update(req, res) {
   const book = await Book.findByIdAndUpdate(req.params.id)
-
+ async function show(req, res) {
+   const book = await Book.findById(req.params.id).populate('explorers')
+ const explorers = await Explorer.find({ _id: { $nin: planet.explorers } })
+  res.render('planets/show', { planet, explorers })
+s }
   await book.save()
 } edit: editBook,
   update*/
