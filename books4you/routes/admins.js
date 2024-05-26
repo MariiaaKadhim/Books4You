@@ -9,6 +9,4 @@ router.get("/new", ensureLoggedIn, adminCtrl.new)
 
 router.post("/", ensureLoggedIn, adminCtrl.create)
 
-router.get("/:id", adminCtrl.show)
-
 module.exports = router

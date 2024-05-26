@@ -21,8 +21,8 @@ passport.use(
           avatar: profile.photos[0].value,
         })
         return cb(null, user)
-      } catch (e) {
-        return cb(e)
+      } catch (err) {
+        return cb(err)
       }
     }
   )
@@ -34,8 +34,8 @@ passport.serializeUser(function (user, cb) {
       throw new Error("User object is missing _id property")
     }
     cb(null, user._id)
-  } catch (e) {
-    cb(e)
+  } catch (err) {
+    cb(err)
   }
 })
 
@@ -43,7 +43,7 @@ passport.deserializeUser(async function (id, cb) {
   try {
     const user = await User.findById(id)
     cb(null, user)
-  } catch (e) {
-    cb(e)
+  } catch (err) {
+    cb(err)
   }
 })
