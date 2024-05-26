@@ -26,16 +26,21 @@ async function create(req, res) {
   }
 }
 
-
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
   res.render('admins/show', { title: 'Book', book })
 }
-
+async function deleteBook(req, res) {
+  const book = Book.findById
+  book.remove(req.params.id)
+  await book.save()
+  res.redirect('/admin')
+}
 
 module.exports = {
   index,
   new: newBook,
-  create
+  create,
+  show,
+  delete: deleteBook
 }
-
