@@ -1,6 +1,9 @@
 var express = require("express")
 var router = express.Router()
-const passport = require("passport")
+
+// const ensureLoggedIn = require('../config/ensureLoggedIn')
+const passport = require('passport')
+const usersCtrl = require('../controllers/users')
 
 /* GET home page. */
 // router.get("/", function (req, res, next) {
@@ -52,5 +55,7 @@ router.get("/logout", function (req, res) {
     res.redirect("/")
   })
 })
+
+router.get('/', usersCtrl.index)
 
 module.exports = router

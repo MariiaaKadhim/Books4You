@@ -59,11 +59,13 @@ app.use(function (req, res, next) {
 app.use(function (e, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = e.message
-  res.locals.error = req.app.get("env") === "development" ? e : {}
+
+  res.locals.error = req.app.get('env') === 'development' ? e : {}
 
   // render the error page
   res.status(e.status || 500)
-  res.render("error")
+  res.render('error')
+
 })
 
 module.exports = app

@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
+
 const Schema = mongoose.Schema
 
 const bookSchema = new Schema(
@@ -9,11 +10,15 @@ const bookSchema = new Schema(
     publishDate: Date,
     summary: String,
     poster: String,
-    rating: Number,
+
     categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
+=======
+
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 )
+
 module.exports = mongoose.model("Book", bookSchema)
+
