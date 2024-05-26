@@ -1,16 +1,11 @@
 <%- include('../partials/header') %>
 
-<h1>Categories</h1>
-
-
-<% categories.forEach(cata => { %>
-<div>
-    <li><%= cata.name%></li>
-    <li><%= cata.id%></li>
-
-</div>
-<% }); %>
-
+<h1><a href="">My Book List</a></h1>
+<% Books.forEach(book => { %>
+    <ul>
+        <li><a href=""><%= book.name%></a></li>
+    </ul>
+<% }); %>  
 
 
 
