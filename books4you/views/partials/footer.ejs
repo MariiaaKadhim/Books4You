@@ -4,13 +4,13 @@
   const path = window.location.pathname;
   console.log(path)
   const panel = document.querySelector(".panel")
-  if (path === "/admins/index" ){
+  if (path === "/admins" ){
     panel.innerHTML = "User Panel"
     panel.href = "/"
   }
   else {
     panel.innerHTML = "Admin Panel"
-    panel.href = "/admins/index"
+    panel.href = "/admins"
   }})
 </script>
 </body>
