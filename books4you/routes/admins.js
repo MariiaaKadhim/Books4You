@@ -11,7 +11,7 @@ router.get('/new', ensureLoggedIn, adminCtrl.new)
 
 router.post('/', ensureLoggedIn, adminCtrl.create)
 
-router.get('/edit/:id', admitCtrl.update)
+//router.get('/edit/:id', adminCtrl.update)
 
 //router.get('/:id', adminCtrl.show)
 //router.get('/update', adminCtrl.new)
