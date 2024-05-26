@@ -12,7 +12,7 @@ require('./config/database')
 require('./config/passport')
 
 var indexRouter = require('./routes/index')
-// var usersRouter = require('./routes/users')
+var usersRouter = require('./routes/users')
 var adminsRouter = require('./routes/admins')
 
 var app = express()
@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 })
 
 app.use('/', indexRouter)
-// app.use('/users', usersRouter)
+app.use('/users', usersRouter)
 app.use('/admins', adminsRouter)
 
 // catch 404 and forward to error handler
@@ -54,13 +54,13 @@ app.use(function (req, res, next) {
 })
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function (e, req, res, next) {
   // set locals, only providing error in development
-  res.locals.message = err.message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}
+  res.locals.message = e.message
+  res.locals.error = req.app.get('env') === 'development' ? e : {}
 
   // render the error page
-  res.status(err.status || 500)
+  res.status(e.status || 500)
   res.render('error')
 })
 
