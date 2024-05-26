@@ -25,9 +25,23 @@ async function create(req, res) {
     res.redirect('/admins/new')
   }
 }
-
+async function show(req, res) {
+  const book = await Book.findById(req.params.id)
+  res.render('admins/show', { title: 'Book', book })
+}
 module.exports = {
   index,
   new: newBook,
-  create
+  create,
+  show
 }
+/*
+const editBook = (req, res) => {
+  res.render('admins/update', { title: 'Edit Book' })
+}
+async function update(req, res) {
+  const book = await Book.findByIdAndUpdate(req.params.id)
+
+  await book.save()
+} edit: editBook,
+  update*/
