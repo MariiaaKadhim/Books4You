@@ -1,52 +1,43 @@
 require("dotenv").config()
 require("./config/database")
 
-const book = require("./models/book")
+const catagory = require("./models/category")
 
-const createCategory = async () => {
+const categories = async () => {
   try {
-    const doc = await book.create(
+    const doc = await catagory.create(
       {
-        name: "Comedy",
-        id: "10",
+        category: "Comedy",
       },
       {
-        name: "Horror-Crime-Mystery",
-        id: "20",
+        category: "Horror-Crime-Mystery",
       },
       {
-        name: "SCI-Fiction",
-        id: "30",
+        category: "SCI-Fiction",
       },
       {
-        name: "fantasy-fairy tale",
-        id: "40",
+        category: "fantasy-fairy tale",
       },
       {
-        name: "movie books",
-        id: "50",
+        category: "movie books",
       },
       {
-        name: "drama-romance",
-        id: "60",
+        category: "drama-romance",
       },
       {
-        name: "kids",
-        id: "70",
+        category: "kids",
       },
       {
-        name: "self learning",
-        id: "80",
+        category: "self learning",
       },
       {
-        name: "novels",
-        id: "90",
+        category: "novels",
       }
     )
     console.log("Done creating category", doc)
-  } catch (err) {
-    console.error(err)
+  } catch (e) {
+    console.error(e)
   }
 }
 
-createCategory()
+categories()

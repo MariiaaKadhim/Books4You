@@ -4,8 +4,10 @@
 
 <% books.forEach(book => { %>
 <ul>
-    <li><a href="" ><%= book.name%></a>
-    </li>
+
+    <li><a href="/admins/<%= book._id %>" ><%= book.name%></a>
+
+
     <!-- <li>Category: <%= book.category %></li>
     <li>Author: <%= book.author %></li>
     <li>Publish Date: <%= book.publishDate %></li>

@@ -1,16 +1,15 @@
-// const BookCategory = require("../models/user")
-// // const Categories = require('../models/categories')
+const Catagory = require("../models/book")
 
-// async function index(req, res) {
-//   try {
-//     let booksCategory = await BookCategory.find({})
-//     res.render("users/index", { booksCategory, title: "Users Page" })
-//   } catch (e) {
-//     console.error(err)
-//     res.redirect("users/index")
-//   }
-// }
+async function cata(req, res) {
+  try {
+    let categories = await Catagory.find({})
+    res.render("users/index", { categories, title: "Users Page" })
+  } catch (e) {
+    console.error(e)
+    res.redirect("users/index")
+  }
+}
 
-// module.exports = {
-//   index,
-// }
+module.exports = {
+  cata,
+}
