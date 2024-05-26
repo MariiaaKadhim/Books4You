@@ -26,6 +26,11 @@ async function create(req, res) {
   }
 }
 
+async function show(req, res) {
+  const book = await Book.findById(req.params.id)
+  res.render('admins/show', { title: 'Book', book })
+}
+
 // async function show(req, res) {
 //   const book = await Book.findById(req.params.id).populate('explorers')
 //   const explorers = await Explorer.find({ _id: { $nin: planet.explorers } })
@@ -35,5 +40,16 @@ async function create(req, res) {
 module.exports = {
   index,
   new: newBook,
-  create
+  create,
+  show
 }
+/*
+const editBook = (req, res) => {
+  res.render('admins/update', { title: 'Edit Book' })
+}
+async function update(req, res) {
+  const book = await Book.findByIdAndUpdate(req.params.id)
+
+  await book.save()
+} edit: editBook,
+  update*/
