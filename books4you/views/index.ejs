@@ -1,6 +1,14 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
-    <h1><%= title %></h1>
-    <p>This is the main page of the website which will show all the categories.</p>
-    
-    <%- include('./partials/footer') %>
+<h1>Categories</h1>
+
+<% booksCategory.forEach(category => { %>
+<ul>
+    <li><a href="" ><%= category.category%></a></li>
+    <li><a href="" ><%= category.id%></a></li>
+
+</ul>
+<% }); %>
+
+
+<%- include('../partials/footer') %>
