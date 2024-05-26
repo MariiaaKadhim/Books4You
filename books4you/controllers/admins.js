@@ -1,10 +1,10 @@
 const Book = require('../models/book')
-// const Categories = require('../models/categories')
+const Catagory = require('../models/book')
 
 async function index(req, res) {
   try {
-    let books = await Book.find({})
-    res.render('admins/index', { books, title: 'Admin Page' })
+    const categories = await Catagory.find({})
+    res.render('admins/index', { categories, title: 'Admin Page' })
   } catch (e) {
     console.error(err)
     res.redirect('admins/index')
