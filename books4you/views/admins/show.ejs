@@ -1,4 +1,5 @@
 
+
 <%- include('../partials/header') %>
 <body>
   <h1> Book Details</h1>
@@ -42,3 +43,24 @@
       <button type="submit">Update Book</button>
   </form>-->
   <%- include('../partials/footer') %>
+
+<%- include('../partials/header') %>
+
+<% books.forEach(book => { %>
+<ul>
+    <li>
+        <a href="" ><%= book.name%></a>
+        <button>Delete</button>
+        <button>Edite</button>
+    </li>
+    <!-- <li>Category: <%= book.category %></li>
+    <li>Author: <%= book.author %></li>
+    <li>Publish Date: <%= book.publishDate %></li>
+    <li>Summary: <%= book.summary %></li>
+    <li>Poster: <%= book.poster %></li>
+    <li>Rating: <%= book.rating %></li> -->
+</ul>
+<% }); %>
+
+
+<%- include('../partials/footer') %>
