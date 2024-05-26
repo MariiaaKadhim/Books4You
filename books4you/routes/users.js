@@ -3,7 +3,7 @@ var router = express.Router()
 // const ensureLoggedIn = require('../config/ensureLoggedIn')
 const usersCtrl = require('../controllers/users')
 
-router.get('/', usersCtrl.cata)
+router.get('/', usersCtrl.index)
 
 // // router.get("/:id", usersCtrl.show)
 
