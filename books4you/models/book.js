@@ -2,6 +2,16 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
+const reviewsSchema = new Schema(
+  {
+    name: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    review: String
+  },
+  {
+    timestamps: true
+  }
+)
+
 const bookSchema = new Schema(
   {
     name: String,
@@ -10,13 +20,27 @@ const bookSchema = new Schema(
     publishDate: Date,
     summary: String,
     poster: String,
+    rating: Number,
+    userid: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    review: [reviewsSchema],
+    categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
 
-    categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
   },
   {
     timestamps: true
   }
 )
 
-module.exports = mongoose.model("Book", bookSchema)
+// const categorySchema = new Schema({
+//   name: {
+//     type: String,
+//     required: true
+//   },
+//   id: {
+//     type: Number,
+//     required: true
+//   },
+//   book: [bookSchema]
+// })
 
+module.exports = mongoose.model('Book', bookSchema)
