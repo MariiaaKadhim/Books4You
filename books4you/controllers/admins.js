@@ -57,6 +57,7 @@ module.exports = {
   new: newBook,
   create,
   show,
-
-  delete: deleteBook
+  edit: editBook,
+  delete: deleteBook,
+  update
 }

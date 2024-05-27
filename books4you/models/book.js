@@ -20,7 +20,7 @@ const bookSchema = new Schema(
     publishDate: Date,
     summary: String,
     poster: String,
-    rating: Number,
+    available: String,
     userid: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     review: [reviewsSchema],
     categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
