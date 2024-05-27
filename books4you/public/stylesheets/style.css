@@ -4,5 +4,23 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover:not(.active) {
+  background-color: #402e2033;
+}
+
+nav > a.active {
+  color: #86654b;
+  font-size: large;
+  font-weight: bolder;
+  cursor: default;
 }
