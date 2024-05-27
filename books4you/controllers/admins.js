@@ -28,7 +28,6 @@ async function create(req, res) {
 
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
-  console.log(`book ${JSON.stringify(book, null, 2)}`)
   res.render('admins/show', { title: 'Book', book })
 }
 
@@ -58,7 +57,6 @@ module.exports = {
   new: newBook,
   create,
   show,
-  delete: deleteBook,
-  edit: editBook,
-  update
+
+  delete: deleteBook
 }
