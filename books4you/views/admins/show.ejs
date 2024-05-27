@@ -13,7 +13,7 @@
         <th>publishDate</th>
         <th>summary</th>
         <th>poster</th>
-        <th>rating</th>
+        <th>Available at</th>
        </tr>
     </thead>
     <tbody>
@@ -21,24 +21,22 @@
         <td><%= book.name %></td>
         <td><%= book.category %></td>
         <td><%= book.author %></td>
-        <td><%= book.publishDate %></td>
+        <td><%= book.publishDate.toLocaleDateString() %></td>
         <td><%= book.summary %></td>
         <td><img src="<%= book.poster %>"></td>
-        <td><%= book.rating %></td>
+        <td><a href="<%= book.available %>"><%= book.available %></a></td>
       </tr>
 
     </tbody>
   </table>
-  <a href="/edit/:id"><button>Edit book </button></a>
-  <button>Delete book </button>
+  <a href="/admins/<%= book._id %>/edit"><button>Edit book </button></a>
+  <br>
+  
+  <form action="/admins/<%= book._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Book</button>
+  </form>
+  
 
 
-  <!--<form action="" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="<%= book.name %>"><br>
-      <label for="category">Category:</label>
-      <input type="text" id="category" name="category" value="<%= book.category %>"><br>
-    
-      <button type="submit">Update Book</button>
-  </form>-->
+ 
   <%- include('../partials/footer') %>
