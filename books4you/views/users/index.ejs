@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
+
+
 <h1><a href="/lists/">My Book List</a></h1>
 
 <% Books.forEach(book => { %>
     <ul>
-        <li><a href="/admins/<%= book._id %> "><%= book.name%></a></li>
+        <li><a href="/admins/<%= book._id %>"><%= book.name%></a></li>
     </ul>
 <% }); %>  
 

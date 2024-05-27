@@ -29,13 +29,20 @@
 
     </tbody>
   </table>
+
+  <%if (user) {%>
+    <%if (user.type) {%>
   <a href="/admins/<%= book._id %>/edit"><button>Edit book </button></a>
   <br>
   
   <form action="/admins/<%= book._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Book</button>
   </form>
-  
+  <%}%>
+<%} else {%>
+  <a href="/auth/google" >login</a>
+          </nav>
+        <%}%>
 
 
  
