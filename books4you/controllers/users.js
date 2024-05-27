@@ -13,6 +13,9 @@ async function index(req, res) {
   }
 }
 
+
+
+
 // async function show(req, res) {
 //   try {
 //     const category = req.params.category
