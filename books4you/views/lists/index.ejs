@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
 <h1>This is my books List</h1>
-<!-- <% Mybooks.forEach(book => { %>
-    <ul>
-        <li><a href=""><%= book.name%></a></li>
-    </ul>
-<% }); %>   -->
-
+<ul>
+    <% books.forEach(book => { %>
+      <li>
+        <img src="<%= book.poster %>" alt="Poster for <%= book.name %>">
+        <a href="/books/<%=book._id%>"><%= book.name %></a>
+      </li>
+    <% }); %>
+  </ul>
 <%- include('../partials/footer') %>
