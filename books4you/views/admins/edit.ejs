@@ -1,15 +1,16 @@
+
 <%- include('../partials/header') %>
+<body>
+  <h1>Edit Book</h1>
+  <form action="/admins/<%= book._id %>?_method=PUT" method="POST">
 
-
-<h1>Add a New Book</h1>
-
-<form action="/admins" method="post">
-<label for="name">Book Name</label>
-<input name="name" type="text">
+  <label for="name">Book Name</label>
+<input name="name" type="text" value="<%= book.name %>">
 
 <label for="category">Category</label>
-<select name="category">
-  <option  name="Comedy" value="Comedy"selected>Comedy</option>
+<select name="category" value="<%= book.category %>">
+
+  <option  name="Comedy" value="Comedy">Comedy</option>
   <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery">Horror-crime-Mystery</option>
   <option  name="SCI-Fiction" value="SCI-Fiction">SCI-Fiction</option>
   <option  name="fantasy-fairy tale" value="fantasy-fairy tale" >fantasy-fairy tale</option>
@@ -22,25 +23,25 @@
 
 
 <label for="author">Author</label>
-<input name="author" type="text">
+<input name="author" type="text" value="<%= book.author %>">
 
 
 <label for="date">Publish Date</label>
-<input name="date" type="date">
+<input name="date" type="date" value="<%= book.date %>">
 
 
 <label for="summary">Book Summary</label>
-<input name="summary" type="text">
+<input name="summary" type="text" value="<%= book.summary %>">
 
 
 <label for="poster">Poster</label>
-<input name="poster" type="text">
+<input name="poster" type="text" value="<%= book.poster %>">
 
 
 <label for="available">Available at</label>
-<input name="available" type="text">
+<input name="available" type="text" value="<%= book.available %>">
 
-<button type="submit">Add Book</button>
-</form>
-
+    <button type="submit">Update Book</button>
+  </form>
+</body>
 <%- include('../partials/footer') %>

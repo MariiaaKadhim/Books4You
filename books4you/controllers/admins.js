@@ -26,16 +26,37 @@ async function create(req, res) {
   }
 }
 
-
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
   res.render('admins/show', { title: 'Book', book })
 }
 
+async function deleteBook(req, res) {
+  await Book.findByIdAndDelete(req.params.id)
+  res.redirect('/admin')
+}
+const editBook = async (req, res) => {
+  const book = await Book.findById(req.params.id)
+  res.render('admins/edit', { title: 'Edit Book', book })
+}
+async function update(req, res) {
+  try {
+    const book = await Book.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.redirect(`/admins/${book._id}`)
+  } catch (e) {
+    console.error(e)
+    res.redirect(`/admins/${book._id}/edit`)
+  }
+}
 
 module.exports = {
   index,
   new: newBook,
-  create
+  create,
+  show,
+  delete: deleteBook,
+  edit: editBook,
+  update
 }
-
