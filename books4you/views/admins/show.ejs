@@ -13,7 +13,7 @@
         <th>publishDate</th>
         <th>summary</th>
         <th>poster</th>
-        <th>rating</th>
+        <th>Available at</th>
        </tr>
     </thead>
     <tbody>
@@ -21,10 +21,10 @@
         <td><%= book.name %></td>
         <td><%= book.category %></td>
         <td><%= book.author %></td>
-        <td><%= book.publishDate %></td>
+        <td><%= book.publishDate.toLocaleDateString() %></td>
         <td><%= book.summary %></td>
         <td><img src="<%= book.poster %>"></td>
-        <td><%= book.rating %></td>
+        <td><a href="<%= book.available %>"><%= book.available %></a></td>
       </tr>
 
     </tbody>

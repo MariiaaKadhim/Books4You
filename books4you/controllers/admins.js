@@ -28,12 +28,14 @@ async function create(req, res) {
 
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
+  console.log(`book ${JSON.stringify(book, null, 2)}`)
   res.render('admins/show', { title: 'Book', book })
 }
 
 async function deleteBook(req, res) {
+  console.log(`Delete...`)
   await Book.findByIdAndDelete(req.params.id)
-  res.redirect('/admin')
+  res.redirect('/admins')
 }
 const editBook = async (req, res) => {
   const book = await Book.findById(req.params.id)

@@ -11,14 +11,14 @@
 <select name="category" value="<%= book.category %>">
 
   <option  name="Comedy" value="Comedy">Comedy</option>
-  <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery">Horror-crime-Mystery</option>
-  <option  name="SCI-Fiction" value="SCI-Fiction">SCI-Fiction</option>
-  <option  name="fantasy-fairy tale" value="fantasy-fairy tale" >fantasy-fairy tale</option>
-  <option  name="movie books" value="movie books">movie books</option>
-  <option  name="drama-romance" value="drama-romance">drama-romance</option>
-  <option  name="kids" value="kids">kids</option>
-  <option  name="self learning" value="self learning">self learning</option>
-  <option  name="novels" value="novels">novels</option>
+  <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery" <%= book.category === 'Horror-crime-Mystery' ? 'Selected' : '' %>>Horror-crime-Mystery</option>
+  <option  name="SCI-Fiction" value="SCI-Fiction" <%= book.category === 'SCI-Fiction' ? 'Selected' : '' %> >SCI-Fiction</option>
+  <option  name="fantasy-fairy tale" value="fantasy-fairy tale" <%= book.category === 'fantasy-fairy tale' ? 'Selected' : '' %>>fantasy-fairy tale</option>
+  <option  name="movie books" value="movie books" <%= book.category === 'movie books' ? 'Selected' : '' %>>movie books</option>
+  <option  name="drama-romance" value="drama-romance"  <%= book.category === 'drama-romance' ? 'Selected' : '' %> >drama-romance</option>
+  <option  name="kids" value="kids" <%= book.category === 'kids' ? 'Selected' : '' %>>kids</option>
+  <option  name="self learning" value="self learning" <%= book.category === 'self learning' ? 'Selected' : '' %>>self learning</option>
+  <option  name="novels" value="novels" <%= book.category === 'novels' ? 'Selected' : '' %>>novels</option>
 </select>
 
 

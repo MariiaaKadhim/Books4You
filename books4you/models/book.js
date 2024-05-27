@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
+
 const bookSchema = new Schema(
   {
     name: String,
@@ -9,22 +10,13 @@ const bookSchema = new Schema(
     publishDate: Date,
     summary: String,
     poster: String,
-    rating: Number
+    available: String,
+
+    categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
   },
   {
     timestamps: true
   }
 )
-// const bookCategorySchema = new Schema({
-//   category: {
-//     type: String,
-//     required: true
-//   },
-//   id: {
-//     type: Number,
-//     required: true
-//   },
-//   book: [bookSchema]
-// })
 
 module.exports = mongoose.model('Book', bookSchema)

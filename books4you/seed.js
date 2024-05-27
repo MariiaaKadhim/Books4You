@@ -1,12 +1,15 @@
 require('dotenv').config()
 require('./config/database')
 
-const catagory = require('./models/book')
+
+const catagory = require("./models/category")
+
 
 const categories = async () => {
   try {
     const doc = await catagory.create(
       {
+
         name: 'Comedy',
         id: '10'
       },
@@ -44,6 +47,7 @@ const categories = async () => {
       }
     )
     console.log('Done creating category', doc)
+
   } catch (e) {
     console.error(e)
   }
