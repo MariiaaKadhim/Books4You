@@ -32,10 +32,24 @@ async function show(req, res) {
 }
 
 async function deleteBook(req, res) {
-  const book = Book.findById
-  book.remove(req.params.id)
-  await book.save()
-  res.redirect('/admin')
+  console.log(`Delete...`)
+  await Book.findByIdAndDelete(req.params.id)
+  res.redirect('/admins')
+}
+const editBook = async (req, res) => {
+  const book = await Book.findById(req.params.id)
+  res.render('admins/edit', { title: 'Edit Book', book })
+}
+async function update(req, res) {
+  try {
+    const book = await Book.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.redirect(`/admins/${book._id}`)
+  } catch (e) {
+    console.error(e)
+    res.redirect(`/admins/${book._id}/edit`)
+  }
 }
 
 module.exports = {
@@ -43,6 +57,7 @@ module.exports = {
   new: newBook,
   create,
   show,
-
-  delete: deleteBook
+  edit: editBook,
+  delete: deleteBook,
+  update
 }
