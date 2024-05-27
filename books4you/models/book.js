@@ -12,8 +12,6 @@ const bookSchema = new Schema(
     poster: String,
 
     categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
-=======
-
   },
   {
     timestamps: true
