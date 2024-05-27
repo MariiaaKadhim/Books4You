@@ -8,11 +8,16 @@
   <body>
     <header>
       <span>Books4you</span>
+      <input type="text" name="query" id="Search" placeholder="Search">
+      
       <%if (user) {%>
         <%if (user.type) {%>
           <a href="/admins/new">Add books</a>
           <a href="/admins" class="panel">Admin panel</a>
         <%}%>
+        
+      
+          
         <!-- <div> -->
           <span><%=user.name.split(" ")[0]%></span>
           <a href="/logout">Log out</a>
