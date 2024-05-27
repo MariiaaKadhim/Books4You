@@ -7,21 +7,23 @@
   <!-- <img src="https://img.freepik.com/premium-vector/study-aesthetic-set-with-organic-shapes-stack-books-coffee-headphones-line-art-vector-illustration_456393-327.jpg" alt="Italian Trulli"> -->
   
   <body>
+    
+  </body>
     <header>
+      <nav>
       <span>Books4you</span>
       <%if (user) {%>
         <%if (user.type) {%>
           <%}%>
-          
-        <a href="/admins/new" class="panel">Add books</a>
+        <a href="/admins/new" >Add books</a>
         <a href="/admins" class="panel">Admin panel</a>
-     
         <!-- <div> -->
           <span><%=user.name.split(" ")[0]%></span>
-          <a href="/logout" class="panel">Log out</a>
-        <!-- </div> -->
-        <%} else {%>
-        <a href="/auth/google" class="panel">login</a>
+          <a href="/logout" >Log out</a>
+          <!-- </div> -->
+          <%} else {%>
+            <a href="/auth/google" >login</a>
+          </nav>
         <%}%>
     </header>
 

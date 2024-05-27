@@ -6,20 +6,34 @@ body {
 a {
   color: #00b7ff;
 }
-
+header {
+  margin: 0;
+  height: 20vh;
+  width: 190vh;
+  /* scrollbar-width: auto; */
+  border: 4px solid lightslategray;
+  background-image: url("https://img.freepik.com/premium-vector/reading-aesthetic-set-stack-books-textbook-notebook-line-art-vector-illustration_456393-262.jpg");
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  /* overflow-y: hidden; */
+}
 nav > a {
   margin: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  /* background-color: lightblue; */
 }
 
 nav > a:hover:not(.active) {
-  background-color: #402e2033;
+  /* background-color: lightblue; */
 }
 
 nav > a.active {
-  color: #86654b;
+  /* color: #86654b; */
+  /* background-color: lightblue; */
   font-size: large;
   font-weight: bolder;
   cursor: default;
