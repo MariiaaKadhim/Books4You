@@ -14,5 +14,6 @@ async function create(req, res) {
     res.redirect(`/books/show/${book._id}`)
   } catch (err) {
     console.log(err)
+    // res.redirect(`/admins/${book._id}`)
   }
 }

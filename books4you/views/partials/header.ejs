@@ -4,28 +4,48 @@
     <!-- <title><%= title %></title> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
- 
-  <body>
-    
-  </body>
+  
     <header>
-      <nav>
-      <span>Books4you</span>
+      
+      <img src="https://bcassetcdn.com/social/apue6p0mhh/preview.png" id="logo">
+      <input type="text" name="query" id="Search" placeholder="Search">
+      
       <%if (user) {%>
-        <%if (user.type) {
-          console.log("the path: "+path)%>
+        <%if (user.type) {%>
+         <button class="log"> <a href="/admins/new">Add books</a></button>
+         <button class="log"><a href="/admins" class="panel">Admin panel</a></button>
+        <%}%>
+      
+      
+          
+        <!-- <div> -->
+         <div class="log user"><h3> <%=user.name.split(" ")[0]%></h3>
+        </div>
+          <a href="/logout"><button class="log log-font" > Log out</button> </a>
+        <!-- </div> -->
+        <%} else {%>
+        <a href="/auth/google">
+          <button class="log flx log-font">
+          <p>Login</p>
+          <img src="https://i.imgur.com/FHjYyi0.png" class="google">
+        </button>
+          </a>
+        
           <% if (path === "/admins" ){%>
             <a href="/admins/new">Add books</a>
           <%}%>
+
           <a href="/admins" class="panel">Admin panel</a>
+          <a href="/requests/questions" class="panel"><button>to be admin</button></a>
+          <a href="/requests/adminReview">admin?</a>
         <%}%>
-        <!-- <div> -->
+
+               <!-- <div> -->
+          <a href="/lists/index">My Book List</a>
+
           <span><%=user.name.split(" ")[0]%></span>
           <a href="/logout" >Log out</a>
-          <!-- </div> -->
           <%} else {%>
             <a href="/auth/google" >login</a>
-          </nav>
-        <%}%>
-    </header>
+            <%}%>
 

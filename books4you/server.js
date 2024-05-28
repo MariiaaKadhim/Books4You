@@ -11,12 +11,21 @@ require("dotenv").config()
 require("./config/database")
 require("./config/passport")
 
+<<<<<<< HEAD
 var indexRouter = require("./routes/index")
 // var usersRouter = require('./routes/users')
 var adminsRouter = require("./routes/admins")
 var listsRouter = require("./routes/lists")
 var reviewsRouter = require("./routes/reviews")
 var booksRouter = require("./routes/books")
+=======
+var indexRouter = require('./routes/index')
+var adminsRouter = require('./routes/admins')
+var listsRouter = require('./routes/lists')
+var requestsRouter = require('./routes/requests')
+var booksRouter = require('./routes/books')
+var reviewsRouter = require('./routes/reviews')
+>>>>>>> 3714770cc890ee8af660b6d1350764bc412e6dda
 
 var app = express()
 
@@ -47,12 +56,21 @@ app.use(function (req, res, next) {
   next()
 })
 
+<<<<<<< HEAD
 app.use("/", indexRouter)
 // app.use('/users', usersRouter)
 app.use("/admins", adminsRouter)
 app.use("/lists", listsRouter)
 app.use("/", reviewsRouter)
 app.use("/books", booksRouter)
+=======
+app.use('/', indexRouter)
+app.use('/admins', adminsRouter)
+app.use('/lists', listsRouter)
+app.use('/requests', requestsRouter)
+app.use('/books', booksRouter)
+app.use('/reviews', reviewsRouter)
+>>>>>>> 3714770cc890ee8af660b6d1350764bc412e6dda
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

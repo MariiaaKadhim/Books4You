@@ -18,11 +18,6 @@ async function index(req, res) {
   }
 }
 
-// async function show(req, res) {
-//   const book = await Book.findById(req.params.id)
-//   res.render("users/show", { title: "Book", book })
-// }
-
 module.exports = {
   index
   // show,
