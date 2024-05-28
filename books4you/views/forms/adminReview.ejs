@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Review</title>
-</head>
-<body>
-  <h1>Admin Review</h1>
-  <ul>
-    <% data.forEach(request => { %>
-      <li>
-        Name: <%= request.name %>, Email: <%= request.email %>, Reason: <%= request.reason %>, main email <%= request.user_email %>
-        <form action="/requests/accept" method="post">
-          <input type="hidden" name="requestId" value="<%= request._id %>">
-          <button type="submit">Accept</button>
-        </form>
-        <form action="/requests/refuse" method="post">
-          <input type="hidden" name="requestId" value="<%= request._id %>">
-          <button type="submit">Refuse</button>
-        </form>
-      </li>
-    <% }); %>
-  </ul>
-</body>
-</html>
+<%- include('../partials/header') %>
+
+<h1>Admin Review</h1>
+
+<ul>
+  <% data.forEach(request => { %>
+    <li>
+      <span>Name: <%=request.name %></span>
+      <span>Email: <%= request.email %></span>
+      <span>Reason: <%= request.reason %></span>
+      <span>main email <%= request.user_email %></span>
+
+      <form action="/requests/accept" method="post">
+        <input type="hidden" name="requestId" value="<%= request._id %>">
+        <button type="submit">Accept</button>
+      </form>
+      
+      <form action="/requests/refuse" method="post">
+        <input type="hidden" name="requestId" value="<%= request._id %>">
+        <button type="submit">Refuse</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>
+
+<%- include('../partials/footer') %>

@@ -2,7 +2,9 @@
 
 <ul>
 <% Books.forEach(book => { %>
-        <li><a href="/books/show/<%= book._id %>"><%= book.name%></a></li>
+        <li>
+            <a href="/books/show/<%= book._id %>"><%= book.name%></a>
+        </li>
     <% }); %>  
 </ul>
 
