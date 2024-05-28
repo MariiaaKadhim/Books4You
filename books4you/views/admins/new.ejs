@@ -1,44 +1,44 @@
 <%- include('../partials/header') %>
 
-
+<div class="container-add">
 <h1>Add a New Book</h1>
-<form action="/admins" method="post">
-  <label for="name">Book Name</label>
-  <input name="name" type="text">
+<form action="/admins" method="post" id="new">
+  <label for="name" class="label-new">Book Name </label>
+  <input name="name" type="text" class="input-form">
 
-  <label for="category">Category</label>
-  <select name="category">
+  <label for="category" class="label-new">Category </label>
+  <select name="category" class="input-form">
     <option  name="Comedy" value="Comedy"selected>Comedy</option>
     <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery">Horror-crime-Mystery</option>
     <option  name="SCI-Fiction" value="SCI-Fiction">SCI-Fiction</option>
     <option  name="fantasy-fairy tale" value="fantasy-fairy tale" >fantasy-fairy tale</option>
     <option  name="movie books" value="movie books">movie books</option>
-    <option  name="drama-romance" value="drama-romance">drama-romance</option>
+    <option  name="romance" value="romance">romance</option>
     <option  name="kids" value="kids">kids</option>
-    <option  name="self learning" value="self learning">self learning</option>
+    <option  name="drama" value="drama">drama</option>
     <option  name="novels" value="novels">novels</option>
   </select>
 
-  <label for="author">Author</label>
-  <input name="author" type="text">
+  <label for="author" class="label-new">Author </label>
+  <input name="author" type="text" class="input-form">
 
 
-  <label for="date">Publish Date</label>
-  <input name="publishDate" type="date">
+  <label for="date" class="label-new">Publish Date </label>
+  <input name="publishDate" type="date" class="input-form">
 
 
-  <label for="summary">Book Summary</label>
-  <input name="summary" type="text">
+  <label for="summary" class="label-new" >Book Summary </label>
+  <input name="summary" type="text" class="input-form">
 
 
-  <label for="poster">Poster</label>
-  <input name="poster" type="text">
+  <label for="poster" class="label-new">Poster </label>
+  <input name="poster" type="text" class="input-form">
 
 
-  <label for="available">Available at</label>
-  <input name="available" type="text">
-
-  <button type="submit">Add Book</button>
-</form>
+  <label for="available" class="label-new">Available at </label>
+  <input name="available" type="text" class="input-form">
+<br>
+  <button type="submit" id="add" class="input-form">Add Book</button>
+</form></div>
 
 <%- include('../partials/footer') %>
