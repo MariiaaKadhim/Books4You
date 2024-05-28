@@ -1,16 +1,9 @@
 <%- include('../partials/header') %>
 
-<%if(user) {%>
-<h1><a href="/lists/index">My Book List</a></h1>
-<%}%>
-
-
+<ul>
 <% Books.forEach(book => { %>
-    <ul>
         <li><a href="/books/show/<%= book._id %>"><%= book.name%></a></li>
-    </ul>
-<% }); %>  
-
-
+    <% }); %>  
+</ul>
 
 <%- include('../partials/footer') %>

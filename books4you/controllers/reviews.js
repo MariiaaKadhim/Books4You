@@ -1,10 +1,6 @@
 const Book = require('../models/book')
 const Review = require('../models/review')
 
-module.exports = {
-  create
-}
-
 async function create(req, res) {
   try {
     console.log('Adding review')
@@ -12,12 +8,16 @@ async function create(req, res) {
     console.log('Book', JSON.stringify(book))
     // Create new review
     // Push review._id into book.reviews
-    book.reviews.push(req.body)
+    book.review.push(req.body)
 
     await book.save()
+    res.redirect(`/books`)
   } catch (err) {
     console.log(err)
+    // res.redirect(`/admins/${book._id}`)
   }
+}
 
-  res.redirect(`/admins/${book._id}`)
+module.exports = {
+  create
 }

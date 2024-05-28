@@ -12,7 +12,6 @@ async function index(req, res) {
       _id: { $in: user.list }
     })
 
-    // Extract the poster and name from each book
     let books = Mybooks.map((book) => ({
       poster: book.poster,
       name: book.name
