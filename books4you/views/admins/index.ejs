@@ -2,20 +2,13 @@
 
 <h1>Added Books List</h1>
 
-<% books.forEach(book => { %>
 <ul>
-
-    <li><a href="/admins/<%= book._id %>" ><%= book.name%></a>
-
-
-    <!-- <li>Category: <%= book.category %></li>
-    <li>Author: <%= book.author %></li>
-    <li>Publish Date: <%= book.publishDate %></li>
-    <li>Summary: <%= book.summary %></li>
-    <li>Poster: <%= book.poster %></li>
-    <li>Rating: <%= book.rating %></li> -->
-</ul>
+<% books.forEach(book => { %>
+    <li>
+        <a href="/books/show/<%= book._id %>" ><%= book.name%></a>
+    </li>
 <% }); %>
+</ul>
 
 
 <%- include('../partials/footer') %>

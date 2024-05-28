@@ -2,44 +2,43 @@
 
 
 <h1>Add a New Book</h1>
-
 <form action="/admins" method="post">
-<label for="name">Book Name</label>
-<input name="name" type="text">
+  <label for="name">Book Name</label>
+  <input name="name" type="text">
 
-<label for="category">Category</label>
-<select name="category">
-  <option  name="Comedy" value="Comedy"selected>Comedy</option>
-  <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery">Horror-crime-Mystery</option>
-  <option  name="SCI-Fiction" value="SCI-Fiction">SCI-Fiction</option>
-  <option  name="fantasy-fairy tale" value="fantasy-fairy tale" >fantasy-fairy tale</option>
-  <option  name="movie books" value="movie books">movie books</option>
-  <option  name="drama-romance" value="drama-romance">drama-romance</option>
-  <option  name="kids" value="kids">kids</option>
-  <option  name="self learning" value="self learning">self learning</option>
-  <option  name="novels" value="novels">novels</option>
-</select>
+  <label for="category">Category</label>
+  <select name="category">
+    <option  name="Comedy" value="Comedy"selected>Comedy</option>
+    <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery">Horror-crime-Mystery</option>
+    <option  name="SCI-Fiction" value="SCI-Fiction">SCI-Fiction</option>
+    <option  name="fantasy-fairy tale" value="fantasy-fairy tale" >fantasy-fairy tale</option>
+    <option  name="movie books" value="movie books">movie books</option>
+    <option  name="drama-romance" value="drama-romance">drama-romance</option>
+    <option  name="kids" value="kids">kids</option>
+    <option  name="self learning" value="self learning">self learning</option>
+    <option  name="novels" value="novels">novels</option>
+  </select>
 
-<label for="author">Author</label>
-<input name="author" type="text">
-
-
-<label for="date">Publish Date</label>
-<input name="publishDate" type="date">
+  <label for="author">Author</label>
+  <input name="author" type="text">
 
 
-<label for="summary">Book Summary</label>
-<input name="summary" type="text">
+  <label for="date">Publish Date</label>
+  <input name="publishDate" type="date">
 
 
-<label for="poster">Poster</label>
-<input name="poster" type="text">
+  <label for="summary">Book Summary</label>
+  <input name="summary" type="text">
 
 
-<label for="available">Available at</label>
-<input name="available" type="text">
+  <label for="poster">Poster</label>
+  <input name="poster" type="text">
 
-<button type="submit">Add Book</button>
+
+  <label for="available">Available at</label>
+  <input name="available" type="text">
+
+  <button type="submit">Add Book</button>
 </form>
 
 <%- include('../partials/footer') %>

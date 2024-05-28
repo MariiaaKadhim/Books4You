@@ -1,4 +1,3 @@
-// const Book = require("../models/book")
 const Category = require('../models/category')
 
 module.exports = {
@@ -7,5 +6,5 @@ module.exports = {
 
 async function index(req, res) {
   const categories = await Category.find({})
-  res.render('index', { title: '', categories })
+  res.render('index', { title: '', categories, path: req.originalUrl })
 }

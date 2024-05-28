@@ -9,9 +9,8 @@ const userSchema = new Schema(
       required: true
     },
     email: String,
-    avatar: String,
     type: { type: Boolean, default: false },
-    list: [{ type: Schema.Types.ObjectId, ref: 'Mylist' }]
+    list: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
   },
   {
     timestamps: true

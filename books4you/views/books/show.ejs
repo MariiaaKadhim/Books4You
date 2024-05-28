@@ -1,0 +1,72 @@
+
+<%- include('../partials/header') %>
+<h1> Book Details</h1>
+
+<span><a href="/lists/<%=book._id%>">Add to my books list</a></span>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Author</th>
+      <th>publishDate</th>
+      <th>summary</th>
+      <th>poster</th>
+      <th>Available at</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.category %></td>
+      <td><%= book.author %></td>
+      <td><%= book.publishDate.toLocaleDateString() %></td>
+      <td><%= book.summary %></td>
+      <td><img src="<%= book.poster %>"></td>
+      <td><a href="<%= book.available %>"><%= book.available %></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<%if (user) {%>
+  <%if (user.type) {%>
+    <a href="/admins/<%= book._id %>/edit"><button>Edit book</button></a>
+    <br>
+  <form action="/admins/<%= book._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Book</button>
+  </form>
+  <%}}%>
+
+        <br><br>
+        <h2>Reviews</h2>
+        <form id="add-review-form" method="POST" action="/books/show/<%= book._id %>">
+          <label>Review:</label>
+          <textarea name="content"></textarea>
+          <input type="submit" value="Add Review">
+        </form>
+
+    <% if (book.review.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Review</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% book.reviews.forEach(function(review) { %>
+            <tr>
+              <td><%= review.nameAt.toLocaleDateString() %></td>
+              <td><%= review.name %></td>
+              <td><%= review.reviews %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h5>No Reviews Yet</h5>
+    <% } %>
+        
+  <%- include('../partials/footer') %>
