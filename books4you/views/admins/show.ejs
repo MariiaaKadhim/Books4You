@@ -46,7 +46,7 @@
 
         <br><br><h2>Reviews</h2>
         <form id="add-review-form" method="POST"
-          action="/book/<%= book._id %>">
+          action="/admins/<%= book._id %>">
           <label>Review:</label>
           <textarea name="content"></textarea>
           
@@ -54,7 +54,7 @@
           <input type="submit" value="Add Review">
         </form>
         
-        <% if (book.reviews.length) { %>
+        <% if (book.review.length) { %>
           <table>
             <thead>
               <tr>

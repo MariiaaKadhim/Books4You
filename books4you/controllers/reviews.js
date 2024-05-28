@@ -12,12 +12,13 @@ async function create(req, res) {
     console.log("Book", JSON.stringify(book))
     // Create new review
     // Push review._id into book.reviews
-    book.reviews.push(req.body)
+    book.review.push(req.body)
 
     await book.save()
+
+    res.redirect(`/admins`)
   } catch (err) {
     console.log(err)
+    res.redirect(`/admins`)
   }
-
-  res.redirect(`/admins/${book._id}`)
 }
