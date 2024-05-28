@@ -1,11 +1,27 @@
 <%- include('../partials/header') %>
 
-<ul>
-<% Books.forEach(book => { %>
-        <li>
-            <a href="/books/show/<%= book._id %>"><%= book.name%></a>
-        </li>
-    <% }); %>  
+<ul class="books-container">
+    <% Books.forEach(book => { %>
+            <li class="book-container">
+                <img class="book-container-poster" src="<%=book.poster%>" alt="">
+                <a class="books" href="/books/show/<%= book._id %>" data-title="<%= book.name.toLowerCase() %>"><%= book.name %></a>
+            </li>
+        <% }); %>  
 </ul>
+
+<script>
+    document.querySelector('#Search').addEventListener('input', function() {
+        const filter = this.value.toLowerCase();
+        const books = document.querySelectorAll('.books');
+        books.forEach(book => {
+            const title = book.getAttribute('data-title');
+            if (title.includes(filter)) {
+                book.parentElement.style.display = 'list-item';
+            } else {
+                book.parentElement.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 <%- include('../partials/footer') %>
