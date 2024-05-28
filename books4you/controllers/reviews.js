@@ -1,15 +1,15 @@
-const Book = require("../models/book")
-const Review = require("../models/review")
+const Book = require('../models/book')
+const Review = require('../models/review')
 
 module.exports = {
-  create,
+  create
 }
 
 async function create(req, res) {
   try {
-    console.log("Adding review")
+    console.log('Adding review')
     const book = await Book.findById(req.params.id)
-    console.log("Book", JSON.stringify(book))
+    console.log('Book', JSON.stringify(book))
     // Create new review
     // Push review._id into book.reviews
     book.reviews.push(req.body)

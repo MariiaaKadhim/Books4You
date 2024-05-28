@@ -3,6 +3,8 @@
 <body>
   <h1> Book Details</h1>
 
+<span><a href="/lists/<%=book._id%>">Add to my books list</a></span>
+
   <table>
     <thead>
       <tr>
@@ -38,11 +40,8 @@
   <form action="/admins/<%= book._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Book</button>
   </form>
-  <%}%>
-<%} else {%>
-  <a href="/auth/google" >login</a>
-          </nav>
-        <%}%>
+  <%}}%>
+
 
         <br><br><h2>Reviews</h2>
         <form id="add-review-form" method="POST"
@@ -54,7 +53,7 @@
           <input type="submit" value="Add Review">
         </form>
         
-        <% if (book.reviews.length) { %>
+        <% if (book.review.length) { %>
           <table>
             <thead>
               <tr>
