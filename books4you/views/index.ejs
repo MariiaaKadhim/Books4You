@@ -39,7 +39,13 @@ ul{
 .title-header{
 font-family: serif;
 }
-
+#catgory{
+  width: 70%;
+  height: 70%
+}
+#cat-text{
+  font-family: serif;
+}
 
 </style>
 <%- include('./partials/header') %>
@@ -51,8 +57,10 @@ font-family: serif;
 <% categories.forEach(category => { %>
   
     <div class="book-item">
-    <img src="https://www.shutterstock.com/image-vector/unlocked-handcuffs-strand-letter-c-260nw-2050002650.jpg">
-     <ul> <li><a href="/users/<%= category.category%>"><%= category.category%></a></li></ul>
+    <img src="https://images-platform.99static.com//PyJvKPgNqtKHcy_djVipKrCdyn8=/155x63:832x740/fit-in/500x500/99designs-contests-attachments/113/113807/attachment_113807449" id="catgory">
+     <ul> <li><a href="/users/<%= category.category%>">
+      <h1><%= category.category%></h1>
+    </a></li></ul>
   </div>
  
   <% }); %>
