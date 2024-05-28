@@ -63,11 +63,11 @@
               </tr>
             </thead>
             <tbody>
-              <% book.reviews.forEach(function(r) { %>
+              <% book.review.forEach(function(r) { %>
                 <tr>
-                  <td><%= r.nameAt.toLocaleDateString() %></td>
-                  <td><%= r.name %></td>
-                  <td><%= r.reviews %></td>
+                  <td><%= r.createdAt.toLocaleDateString() %></td>
+                  <td><%= r.content %></td>
+                  <td><%= r.review %></td>
                 </tr>
               <% }); %>
             </tbody>

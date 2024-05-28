@@ -24,7 +24,7 @@ const bookSchema = new Schema(
     poster: String,
     available: String,
     userid: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    // reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
+
     review: [reviewsSchema],
     categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
   },
@@ -32,17 +32,5 @@ const bookSchema = new Schema(
     timestamps: true,
   }
 )
-
-// const categorySchema = new Schema({
-//   name: {
-//     type: String,
-//     required: true
-//   },
-//   id: {
-//     type: Number,
-//     required: true
-//   },
-//   book: [bookSchema]
-// })
 
 module.exports = mongoose.model("Book", bookSchema)

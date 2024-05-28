@@ -1,5 +1,5 @@
 const Book = require("../models/book")
-const Review = require("../models/review")
+// const Review = require("../models/review")
 
 module.exports = {
   create,
@@ -16,9 +16,9 @@ async function create(req, res) {
 
     await book.save()
 
-    res.redirect(`/admins`)
+    res.redirect(`/admins/${movie._id}`)
+    // res.redirect(`/admins`)
   } catch (err) {
     console.log(err)
-    res.redirect(`/admins`)
   }
 }
