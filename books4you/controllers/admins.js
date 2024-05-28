@@ -32,30 +32,26 @@ async function create(req, res) {
   }
 }
 
-// //This function will show a specific book by its id.
-// async function show(req, res) {
-//   const book = await Book.findById(req.params.id)
-//   res.render('admins/show', { title: 'Book', book, path: req.originalUrl })
-// }
-
 //This function is responsible for delete a book.
 async function deleteBook(req, res) {
-  console.log(`Delete...`)
+  // console.log(`Delete...`)
   await Book.findByIdAndDelete(req.params.id)
   res.redirect('/admins')
 }
 
+//This function is responsible for edite the books.
 const editBook = async (req, res) => {
   const book = await Book.findById(req.params.id)
   res.render('admins/edit', { title: 'Edit Book', book, path: req.originalUrl })
 }
 
+//This function is responsible for update the book informations.
 async function update(req, res) {
   try {
     const book = await Book.findByIdAndUpdate(req.params.id, req.body, {
       new: true
     })
-    console.log('This the the book ID in the update function' + book._id)
+    // console.log('This the the book ID in the update function' + book._id)
     res.redirect(`/books/show/${book._id}`)
   } catch (e) {
     console.error(e)

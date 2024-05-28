@@ -1,16 +1,10 @@
-
 <%- include('./partials/header') %>
 
 <h1>Categories</h1>
 
-
-
+<ul>
 <% categories.forEach(category => { %>
-  <ul>
       <li><a href="/books/<%= category.category%>"><%= category.category%></a></li>
-  
-  </ul>
-  <% }); %>
-  
-
+      <% }); %>
+</ul>
 <%- include('./partials/footer') %>
