@@ -5,6 +5,7 @@ async function index(req, res) {
   try {
     const category = req.params.category
     let Books = await Book.find({ category: category })
+    console.log('This is the books path' + req.originalUrl)
     res.render('books/index', {
       Books,
       title: 'Books Page',

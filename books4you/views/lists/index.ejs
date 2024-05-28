@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
-<h1>This is my books List</h1>
-<ul>
+<h1 class="book-list-head">My books list</h1>
+<ul class="books-container">
     <% books.forEach(book => { %>
-      <li>
-        <img src="<%= book.poster %>" alt="Poster for <%= book.name %>">
+      <li class="book-container">
+        <img class="book-container-poster" src="<%= book.poster %>" alt="Poster for <%= book.name %>">
         <a href="/books/show/<%=book._id%>"><%= book.name %></a>
       </li>
     <% }); %>

@@ -9,7 +9,9 @@
   <header>
 
       <a href="/"><img src="https://bcassetcdn.com/social/apue6p0mhh/preview.png" id="logo"></a>
+      <%if  (/^\/books(?!\/show)/.test(path)){%>
       <input type="text" name="query" id="Search" placeholder="Search">
+      <%}%>
       
       <%if (user) {%>
         <%if (user.type) {%>
