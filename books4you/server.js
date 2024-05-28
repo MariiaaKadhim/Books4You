@@ -14,6 +14,7 @@ require('./config/passport')
 var indexRouter = require('./routes/index')
 var adminsRouter = require('./routes/admins')
 var listsRouter = require('./routes/lists')
+var requestsRouter = require('./routes/requests')
 var booksRouter = require('./routes/books')
 var reviewsRouter = require('./routes/reviews')
 
@@ -49,6 +50,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter)
 app.use('/admins', adminsRouter)
 app.use('/lists', listsRouter)
+app.use('/requests', requestsRouter)
 app.use('/books', booksRouter)
 app.use('/reviews', reviewsRouter)
 

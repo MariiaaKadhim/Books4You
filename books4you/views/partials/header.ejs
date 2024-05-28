@@ -31,8 +31,21 @@
         </button>
           </a>
         
+          <% if (path === "/admins" ){%>
+            <a href="/admins/new">Add books</a>
+          <%}%>
+
+          <a href="/admins" class="panel">Admin panel</a>
+          <a href="/requests/questions" class="panel"><button>to be admin</button></a>
+          <a href="/requests/adminReview">admin?</a>
         <%}%>
-        
-    </header>
-    
- <body>
+
+               <!-- <div> -->
+          <a href="/lists/index">My Book List</a>
+
+          <span><%=user.name.split(" ")[0]%></span>
+          <a href="/logout" >Log out</a>
+          <%} else {%>
+            <a href="/auth/google" >login</a>
+            <%}%>
+
