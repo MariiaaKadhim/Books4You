@@ -1,5 +1,5 @@
 const Book = require("../models/book")
-// const Review = require("../models/review")
+const Review = require("../models/review")
 
 module.exports = {
   create,
