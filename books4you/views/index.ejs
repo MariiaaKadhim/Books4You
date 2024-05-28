@@ -57,10 +57,10 @@ font-family: serif;
 <% categories.forEach(category => { %>
   
     <div class="book-item">
-    <img src="https://images-platform.99static.com//PyJvKPgNqtKHcy_djVipKrCdyn8=/155x63:832x740/fit-in/500x500/99designs-contests-attachments/113/113807/attachment_113807449" id="catgory">
-     <ul> <li><a href="/users/<%= category.category%>">
+    <img src="<%= category.catImg %>" id="catgory">
+     <ul> <li><a href="/users/<%= category.category%>"></li>
       <h1><%= category.category%></h1>
-    </a></li></ul>
+    </a></ul>
   </div>
  
   <% }); %>
