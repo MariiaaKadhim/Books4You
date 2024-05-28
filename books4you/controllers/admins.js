@@ -34,7 +34,6 @@ async function create(req, res) {
 
 //This function is responsible for delete a book.
 async function deleteBook(req, res) {
-  // console.log(`Delete...`)
   await Book.findByIdAndDelete(req.params.id)
   res.redirect('/admins')
 }
@@ -51,7 +50,6 @@ async function update(req, res) {
     const book = await Book.findByIdAndUpdate(req.params.id, req.body, {
       new: true
     })
-    // console.log('This the the book ID in the update function' + book._id)
     res.redirect(`/books/show/${book._id}`)
   } catch (e) {
     console.error(e)

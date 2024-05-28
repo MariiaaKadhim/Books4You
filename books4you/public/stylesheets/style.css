@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 body {
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   margin: 0px;
+  padding: 0;
   height: 100vh;
   background-color: #f5f5f5;
 }
@@ -10,27 +10,31 @@ a {
   color: #00b7ff;
 }
 
-.nav {
+/* .nav {
   background-color: rgba(158, 183, 228, 0.568);
-}
+} */
 
 header {
   background-color: #4071a1;
   display: flex;
   padding: 30px;
+  height: 8%;
   justify-content: space-around;
   align-items: center;
 }
+
 .log {
   height: 50px;
   width: 100px;
   border-radius: 6px;
   border: rgb(1, 7, 36) 2px solid;
 }
+
 button:hover {
   background-color: #e6e1e1;
   border: rgb(1, 7, 36) 3px solid;
 }
+
 #search {
   height: 50px;
   width: 50%;
@@ -40,28 +44,77 @@ button:hover {
   width: 20px;
   height: 20px;
 }
+
 .flx {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+
 .user {
   background-color: #f5f5f5;
   border-radius: 100%;
   text-align: center;
 }
+
 a {
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
+
 .log-font {
   font-weight: bold;
 }
+
 #logo {
   width: 100px;
   height: 100px;
   border-radius: 50px;
 }
-=======
->>>>>>> 004cb51de0f14a540f84379f2179539cce0aad8a
+
+.container {
+  margin: 10px;
+  background-color: #f5f5f5;
+  text-align: center;
+  align-items: center;
+  height: 80%;
+}
+
+footer {
+  height: 70px;
+}
+
+.book-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  height: 70%;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.book-item {
+  background-color: #fdfdfc;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.title-header {
+  font-family: serif;
+}
+
+#catgory {
+  width: 70%;
+  height: 70%;
+}
+
+#cat-text {
+  font-family: serif;
+}

@@ -19,7 +19,6 @@ async function index(req, res) {
 //This function will show a specific book by its id.
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
-  // console.log('The show page is working')
   res.render('books/show', { title: 'Book', book, path: req.originalUrl })
 }
 

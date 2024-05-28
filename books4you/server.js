@@ -42,7 +42,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(function (req, res, next) {
-  console.log(JSON.stringify(req.user, null, 2))
+  // console.log(JSON.stringify(req.user, null, 2))
   res.locals.user = req.user
   next()
 })
@@ -52,7 +52,7 @@ app.use('/admins', adminsRouter)
 app.use('/lists', listsRouter)
 app.use('/requests', requestsRouter)
 app.use('/books', booksRouter)
-app.use('/reviews', reviewsRouter)
+app.use('/', reviewsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
