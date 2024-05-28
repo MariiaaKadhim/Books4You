@@ -9,8 +9,11 @@
     <header>
       <span>Books4you</span>
       <%if (user) {%>
-        <%if (user.type) {%>
-          <a href="/admins/new">Add books</a>
+        <%if (user.type) {
+          console.log("the path: "+path)%>
+          <% if (path === "/admins" ){%>
+            <a href="/admins/new">Add books</a>
+          <%}%>
           <a href="/admins" class="panel">Admin panel</a>
         <%}%>
         <!-- <div> -->

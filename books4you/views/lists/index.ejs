@@ -5,7 +5,7 @@
     <% books.forEach(book => { %>
       <li>
         <img src="<%= book.poster %>" alt="Poster for <%= book.name %>">
-        <a href="/books/<%=book._id%>"><%= book.name %></a>
+        <a href="/books/show/<%=book._id%>"><%= book.name %></a>
       </li>
     <% }); %>
   </ul>

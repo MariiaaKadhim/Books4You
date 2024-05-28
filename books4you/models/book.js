@@ -4,8 +4,10 @@ const Schema = mongoose.Schema
 
 const reviewsSchema = new Schema(
   {
-    name: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    review: String
+    content: {
+      type: String,
+      required: true
+    }
   },
   {
     timestamps: true
@@ -20,10 +22,11 @@ const bookSchema = new Schema(
     publishDate: Date,
     summary: String,
     poster: String,
-    rating: Number,
-    userid: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    review: [reviewsSchema],
-    categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
+    available: String,
+    // rating: Number,
+    userid: { type: Schema.Types.ObjectId, ref: 'User' },
+    review: [reviewsSchema]
+    // categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
   },
   {
     timestamps: true

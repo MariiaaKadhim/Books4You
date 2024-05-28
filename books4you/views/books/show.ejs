@@ -31,15 +31,16 @@
 
     </tbody>
   </table>
-  <!-- <a href="/edit/:id"><button>Edit book </button></a>
-  <button>Delete book </button> -->
 
+  <%if (user) {%>
+    <%if (user.type) {%>
   <a href="/admins/<%= book._id %>/edit"><button>Edit book </button></a>
   <br>
   
   <form action="/admins/<%= book._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Book</button>
   </form>
+  <%}}%>
 
 
   <!--<form action="" method="POST">
