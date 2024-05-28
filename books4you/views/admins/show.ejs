@@ -1,0 +1,42 @@
+
+<%- include('../partials/header') %>
+<body>
+  <h1> Book Details</h1>
+
+  <table>
+    <thead>
+      <tr>
+      
+        <th>Name</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th>publishDate</th>
+        <th>summary</th>
+        <th>poster</th>
+        <th>Available at</th>
+       </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= book.name %></td>
+        <td><%= book.category %></td>
+        <td><%= book.author %></td>
+        <td><%= book.publishDate.toLocaleDateString() %></td>
+        <td><%= book.summary %></td>
+        <td><img src="<%= book.poster %>" style="width:200px;height: 300px;"></td>
+        <td><a href="<%= book.available %>"><%= book.available %></a></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <a href="/admins/<%= book._id %>/edit"><button>Edit book </button></a>
+  <br>
+  
+  <form action="/admins/<%= book._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Book</button>
+  </form>
+  
+
+
+ 
+  <%- include('../partials/footer') %>
