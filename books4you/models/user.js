@@ -11,7 +11,7 @@ const userSchema = new Schema(
     email: String,
     avatar: String,
     type: { type: Boolean, default: false },
-    list: [{ type: Schema.Types.ObjectId, ref: 'Mylist' }]
+    list: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
   },
   {
     timestamps: true
