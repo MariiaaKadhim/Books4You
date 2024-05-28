@@ -17,6 +17,8 @@ var adminsRouter = require('./routes/admins')
 var listsRouter = require('./routes/lists')
 var booksRouter = require('./routes/books')
 
+var reviewsRouter = require('./routes/reviews')
+
 var app = express()
 
 // view engine setup
