@@ -17,8 +17,6 @@ var adminsRouter = require("./routes/admins")
 var listsRouter = require("./routes/lists")
 var booksRouter = require("./routes/books")
 
-var reviewsRouter = require("./routes/reviews")
-
 var app = express()
 
 // view engine setup
@@ -53,7 +51,6 @@ app.use("/", indexRouter)
 app.use("/admins", adminsRouter)
 app.use("/lists", listsRouter)
 app.use("/books", booksRouter)
-app.use("/", reviewsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
