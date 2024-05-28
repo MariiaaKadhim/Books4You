@@ -118,3 +118,39 @@ ul {
 #cat-text {
   font-family: serif;
 }
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: space-evenly;
+  padding: 49px 0;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.book-container-poster {
+  width: 140px;
+  height: 190px;
+}
+
+.book-container a {
+  padding: 10px;
+  text-wrap: wrap;
+  text-align: center;
+  width: 220px;
+}
+
+a:hover {
+  color: #4071a1;
+}
+
+.book-list-head {
+  margin: 31px 20px 0;
+}
