@@ -5,6 +5,10 @@ const categorySchema = new Schema({
   category: {
     type: String,
     required: true
+  },
+  catImg: {
+    type: String,
+    required: true
   }
 })
 

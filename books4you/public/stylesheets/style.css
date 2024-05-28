@@ -1,0 +1,67 @@
+<<<<<<< HEAD
+body {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0px;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.nav {
+  background-color: rgba(158, 183, 228, 0.568);
+}
+
+header {
+  background-color: #4071a1;
+  display: flex;
+  padding: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+.log {
+  height: 50px;
+  width: 100px;
+  border-radius: 6px;
+  border: rgb(1, 7, 36) 2px solid;
+}
+button:hover {
+  background-color: #e6e1e1;
+  border: rgb(1, 7, 36) 3px solid;
+}
+#search {
+  height: 50px;
+  width: 50%;
+  border-radius: 4px;
+}
+.google {
+  width: 20px;
+  height: 20px;
+}
+.flx {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.user {
+  background-color: #f5f5f5;
+  border-radius: 100%;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.log-font {
+  font-weight: bold;
+}
+#logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+=======
+>>>>>>> 004cb51de0f14a540f84379f2179539cce0aad8a
