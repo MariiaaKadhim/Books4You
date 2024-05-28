@@ -83,6 +83,7 @@ a {
   font-family: serif;
   font-size: 20px;
   font-weight: bold;
+  border: 3px solid #4071a1;
 }
 .input-form {
   height: 35px;
@@ -94,8 +95,8 @@ a {
   font-weight: bold;
 }
 #add:hover {
-  background-color: #bfc1ca;
-  border: 2px solid rgb(8, 0, 83);
+  background-color: #dbdde6;
+  border: 2px solid #4071a1;
   height: 40px;
-  color: rgb(8, 0, 83);
+  color: #4071a1;
 }
