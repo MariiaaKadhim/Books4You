@@ -1,14 +1,16 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
 
 const reviewsSchema = new Schema(
   {
-    name: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    review: String
+    content: {
+      type: String,
+      required: true,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 )
 
@@ -21,12 +23,13 @@ const bookSchema = new Schema(
     summary: String,
     poster: String,
     available: String,
-    userid: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    userid: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    // reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
     review: [reviewsSchema],
-    categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
+    categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 )
 
@@ -42,4 +45,4 @@ const bookSchema = new Schema(
 //   book: [bookSchema]
 // })
 
-module.exports = mongoose.model('Book', bookSchema)
+module.exports = mongoose.model("Book", bookSchema)

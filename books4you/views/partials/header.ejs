@@ -4,9 +4,12 @@
     <!-- <title><%= title %></title> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  
+ 
   <body>
+    
+  </body>
     <header>
+      <nav>
       <span>Books4you</span>
       <%if (user) {%>
         <%if (user.type) {%>
@@ -15,10 +18,11 @@
         <%}%>
         <!-- <div> -->
           <span><%=user.name.split(" ")[0]%></span>
-          <a href="/logout">Log out</a>
-        <!-- </div> -->
-        <%} else {%>
-        <a href="/auth/google">login</a>
+          <a href="/logout" >Log out</a>
+          <!-- </div> -->
+          <%} else {%>
+            <a href="/auth/google" >login</a>
+          </nav>
         <%}%>
     </header>
 
