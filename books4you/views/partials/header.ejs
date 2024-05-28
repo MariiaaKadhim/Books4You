@@ -4,30 +4,39 @@
     <!-- <title><%= title %></title> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
- 
-  <body>
-    
-  </body>
+
+  <body> 
     <header>
       <nav>
       <span>Books4you</span>
       <%if (user) {%>
         <%if (user.type) {
           console.log("the path: "+path)%>
+        
           <% if (path === "/admins" ){%>
             <a href="/admins/new">Add books</a>
           <%}%>
+
           <a href="/admins" class="panel">Admin panel</a>
           <a href="/requests/questions" class="panel"><button>to be admin</button></a>
           <a href="/requests/adminReview">admin?</a>
         <%}%>
+<<<<<<< HEAD
                <!-- <div> -->
+=======
+          <a href="/lists/index">My Book List</a>
+>>>>>>> 004cb51de0f14a540f84379f2179539cce0aad8a
           <span><%=user.name.split(" ")[0]%></span>
           <a href="/logout" >Log out</a>
-          <!-- </div> -->
           <%} else {%>
             <a href="/auth/google" >login</a>
             <%}%>
+<<<<<<< HEAD
           </nav>
             </header>
+=======
+
+      </nav>
+    </header>
+>>>>>>> 004cb51de0f14a540f84379f2179539cce0aad8a
 

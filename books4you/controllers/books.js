@@ -16,20 +16,14 @@ async function index(req, res) {
   }
 }
 
-// const editBook = async (req, res) => {
-//   const book = await Book.findById(req.params.id)
-//   res.render('books/edit', { title: 'Edit Book', book, path: req.originalUrl })
-// }
-
 //This function will show a specific book by its id.
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
-  console.log('The show page is working')
+  // console.log('The show page is working')
   res.render('books/show', { title: 'Book', book, path: req.originalUrl })
 }
 
 module.exports = {
   index,
   show
-  // edit: editBook
 }
