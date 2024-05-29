@@ -2,7 +2,9 @@
 <%- include('../partials/header') %>
 <h1 id="hed"> Book Details</h1>
 <span>
-  <a href="/lists/<%=book._id%>">Add to my books list</a>
+  <a class="add-to-books-list" href="/lists/<%=book._id%>">
+    <img src="https://static.thenounproject.com/png/581235-200.png" alt="">
+  </a>
 </span>
 <div class="detail">
 
@@ -17,16 +19,16 @@
 
 </tr>
      <tr>
-      <th>Author</th>
+      <th>Author </th>
      <td><%= book.author %></td>
     </tr> 
-      <tr><th>publishDate</th>
+      <tr><th>publishDate </th>
       <td><%= book.publishDate.toLocaleDateString() %></td>
       </tr>
      
      
      <tr>
-       <th>Available at</th>
+       <th>Available at </th>
        <td><a href="<%= book.available %>">
         Click to Find book here
       </a></td>
@@ -61,7 +63,6 @@
 <div class="feedback">
     <h1>Reviews</h1>
     <form id="add-review-form" method="POST" action="/books/<%= book._id %>/reviews">
-      <h4>Review:</h4>
       <textarea name="content"></textarea>
       <input type="submit" value="Add Review">
     </form>
