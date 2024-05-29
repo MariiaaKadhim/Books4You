@@ -1,18 +1,14 @@
 <%- include('./partials/header') %>
 
-<div class="container">
-  <h1 class="title-header">Categories</h1>
+<h1 class="title-header">Categories</h1>
+
+<div class="categories-container">
   <div class="book-boxes">
     <% categories.forEach(category => { %>
-        <div class="book-item">
+        <a href="/books/<%= category.category%>" class="book-item">
           <img src="<%= category.catImg %>" id="catgory">
-          <!-- <ul>
-            <li> -->
-              <a href="/books/<%= category.category%>"><%= category.category%></h1>
-              </a>
-            <!-- </li>
-          </ul> -->
-        </div>
+          <%= category.category%>
+        </a>
       <% }); %>
   </div>
 </div>
