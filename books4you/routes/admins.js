@@ -9,7 +9,7 @@ router.get('/new', ensureLoggedIn, adminCtrl.new) //To creat a new book.
 
 router.post('/', ensureLoggedIn, adminCtrl.create) //Save the new book in the database.
 
-router.get('/:id/edit', ensureLoggedIn, adminCtrl.edit)
+router.get('/:id/edit', ensureLoggedIn, adminCtrl.edit) //To edit a book informations.
 
 router.put('/:id', ensureLoggedIn, adminCtrl.update) //To update a book informations.
 

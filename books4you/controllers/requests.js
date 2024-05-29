@@ -2,8 +2,8 @@ const Request = require('../models/request')
 const User = require('../models/user')
 
 const questions = (req, res) => {
-  res.render('forms/questions', { title: 'Questions' });
-};
+  res.render('forms/questions', { title: 'Questions', path: req.originalUrl })
+}
 
 const submitRequest = async (req, res) => {
   try {
@@ -20,8 +20,12 @@ const submitRequest = async (req, res) => {
     res.status(400).send('Error saving data: ' + err)
   }
 }
+
 const success = (req, res) => {
-  res.render('forms/success', { title: 'Form Submitted Successfully' })
+  res.render('forms/success', {
+    title: 'Form Submitted Successfully',
+    path: req.originalUrl
+  })
 }
 
 const acceptRequest = async (req, res) => {
@@ -44,8 +48,11 @@ const acceptRequest = async (req, res) => {
 const adminReview = async (req, res) => {
   try {
     const data = await Request.find({})
-    console.log(data)
-    res.render('forms/adminReview', { data: data })
+    res.render('forms/adminReview', {
+      data: data,
+      title: 'Requests Review',
+      path: req.originalUrl
+    })
   } catch (error) {
     console.error('Error fetching data:', error)
     res.status(500).send('An error occurred while fetching data.')
