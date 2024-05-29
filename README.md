@@ -10,7 +10,7 @@
 
 #### [GitHub](https://github.com/jasimSalman) | [LinkedIn]()
 
-#### [GitHub](https://github.com/jawadbri) | [LinkedIn]()
+#### [GitHub](https://github.com/jawadbri) | [LinkedIn](https://www.linkedin.com/in/jawadalberri/)
 
 ---
 
