@@ -191,3 +191,57 @@ a:hover {
 .book-list-head {
   margin: 31px 20px 0;
 }
+
+.request-form-container {
+  /* background-color: red; */
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.reqeust-form-input {
+  width: 26%;
+  height: 8%;
+  border-radius: 2px;
+  font-size: 20px;
+  margin: 17px;
+}
+
+.reqeust-form-textarea {
+  resize: none;
+  width: 26%;
+  height: 24%;
+  border-radius: 2px;
+  font-size: 20px;
+  margin: 17px;
+}
+
+.request-form-label {
+  font-size: 27px;
+  position: relative;
+  right: 171px;
+  width: 5%;
+  padding-top: 34px;
+}
+
+.request-form-submit {
+  width: 12%;
+  height: 7%;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.request-form-submit:hover {
+  background-color: #4071a1;
+  color: white;
+}
