@@ -1,25 +1,26 @@
 <%- include('../partials/header') %>
-
+<div class="container-acc">
 <h1>Admin Review</h1>
 
-<ul>
+<ul id="new" class="no-dec">
   <% data.forEach(request => { %>
     <li>
       <span>Name: <%=request.name %></span>
       <span>Email <%= request.user_email %></span>
       <span>Reason: <%= request.reason %></span>
-
-      <form action="/requests/accept" method="post">
+      <br> <br>
+<div class="acc-rej">
+      <form action="/requests/accept" method="post" >
         <input type="hidden" name="requestId" value="<%= request._id %>">
-        <button type="submit">Accept</button>
+        <button type="submit"  class="input-form" id="add">Accept</button>
       </form>
       
       <form action="/requests/refuse" method="post">
         <input type="hidden" name="requestId" value="<%= request._id %>">
-        <button type="submit">Refuse</button>
-      </form>
+        <button type="submit" id="add" class="input-form">Refuse</button>
+      </form></div>
     </li>
   <% }); %>
 </ul>
-
+</div>
 <%- include('../partials/footer') %>

@@ -400,3 +400,19 @@ td {
 #hed {
   margin-left: 30px;
 }
+.container-acc {
+  margin: 20px;
+  background-color: #e6e7ed;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.acc-rej {
+  display: flex;
+  flex-direction: row;
+}
+.no-dec {
+  list-style: none;
+}
