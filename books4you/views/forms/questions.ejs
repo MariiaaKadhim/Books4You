@@ -1,18 +1,16 @@
 <%- include('../partials/header') %>
-<div class="container-list">
- 
-<form action="/requests/submit" method="post" id="new">
-  
-  <label for="name" class="label-new">Name:</label>
-  <input type="text" id="name" name="name" required class="input-form">
-  
-  <label for="email" class="label-new">Email:</label>
-  <input type="email" id="email" name="email" required class="input-form">
-  
-  <label for="name" class="label-new">reason:</label>
-  <textarea id="reason" name="reason" required class="input-form"></textarea>
-  
-  <input type="submit" value="Submit" id="add" class="input-form">
-</form>
+
+<div class="request-form-container">
+  <form class="request-form" action="/requests/submit" method="post">
+    
+    <label class="request-form-label" for="name">Name</label>
+    <input class="reqeust-form-input" type="text" id="name" name="name" required>
+    
+    <label class="request-form-label" for="name">Reason</label>
+    <textarea  class="reqeust-form-textarea" id="reason" name="reason" required></textarea>
+    
+    <input class="request-form-submit" type="submit" value="Submit">
+  </form>
 </div>
+
 <%- include('../partials/footer') %>

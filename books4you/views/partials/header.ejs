@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    </head>
 
 <body>
   <header>
+    <div class="header-logo" >
+        <a href="/">
+        <img src="https://bcassetcdn.com/social/apue6p0mhh/preview.png" id="logo">
+        </a>
+    </div>
 
-      <a href="/"><img src="https://bcassetcdn.com/social/apue6p0mhh/preview.png" id="logo"></a>
+    <div class="header-main">
       <%if  (/^\/books(?!\/show)/.test(path)){%>
-      <input type="text" name="query" id="Search" placeholder="Search">
+        <input type="text" name="query" id="search" placeholder="Search">
       <%}%>
       
       <% if (user) { %>
         <% if (user.type) { %>
-            <button class="log">
-                <a href="/admins" class="panel">Admin panel</a>
-            </button>
+                <a href="/admins" class="header-link">Admin panel</a>
             <% if (path === "/admins") { %>
-                <button class="log">
-                    <a href="/admins/new">Add books</a>
-                </button>
-                <a href="/requests/adminReview">Review Requests</a>
+                    <a class="header-link" href="/admins/new">Add books</a>
+
+                <a class="header-link" href="/requests/adminReview">Review Requests</a>
+
                 <% } %>
-                <% } else { %>
-                <a href="/requests/questions" class="request-panel">
-                    <button>Admin Request</button>
-                </a>
-                <% } %>
+                <% } else{%>
+                <a class="header-link" href="/requests/questions" class="request-panel">Admin Request</a>
+                <%}%>
     
-    
-        <a href="/lists/index">My Book List</a>
-    
-        <div class="log user">
-            <h3><%= user.name.split(" ")[0] %></h3>
-        </div>
-        <a href="/logout">
-            <button class="log log-font">Log out</button>
-        </a>
-    
+                <a class="header-link" href="/lists/index">My Book List</a>
+                
+                <div class="user-info">
+                    <div class="header-link username"><%= user.name.split(" ")[0] %></div>
+                    <a class="header-link logout-button" href="/logout">Log out</a>
+                </div>
     <% } else { %>
-        <a href="/auth/google">
-            <button class="log flx log-font">
-                <p>Login</p>
-                <img src="https://i.imgur.com/FHjYyi0.png" class="google">
-            </button>
-        </a>
+        <div class="login-butt-container">
+            <a class="login-butt" href="/auth/google">Login</a>
+        </div>
     <% } %>
     
-    
+    </div>
 
+
+
+    
     </header>
 
 
