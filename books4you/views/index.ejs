@@ -6,13 +6,12 @@
     <% categories.forEach(category => { %>
         <div class="book-item">
           <img src="<%= category.catImg %>" id="catgory">
-          <ul>
-            <li>
-              <a href="/books/<%= category.category%>">
-              <h1><%= category.category%></h1>
+          <!-- <ul>
+            <li> -->
+              <a href="/books/<%= category.category%>"><%= category.category%></h1>
               </a>
-            </li>
-          </ul>
+            <!-- </li>
+          </ul> -->
         </div>
       <% }); %>
   </div>

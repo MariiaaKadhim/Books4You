@@ -81,7 +81,7 @@ header {
   order: -1;
 }
 
-.user-info {
+/* .user-info {
   position: relative;
 }
 
@@ -98,7 +98,7 @@ header {
 
 .username:hover + .logout-button {
   display: block;
-}
+} */
 
 /* 
 
