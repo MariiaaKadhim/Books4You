@@ -1,43 +1,44 @@
 
 <%- include('../partials/header') %>
 
+<div class="container-add">
 <h1>Edit Book</h1>
-<form action="/admins/<%= book._id %>?_method=PUT" method="POST">
+<form action="/admins/<%= book._id %>?_method=PUT" method="POST" id="new">
 
-  <label for="name">Book Name</label>
-  <input name="name" type="text" value="<%= book.name %>">
+  <label for="name" class="label-new">Book Name</label>
+  <input name="name" type="text" value="<%= book.name %>" class="input-form">
 
-  <label for="category">Category</label>
-  <select name="category" value="<%= book.category %>">
+  <label for="category" class="label-new">Category</label>
+  <select name="category" value="<%= book.category %>" class="input-form">
     <option  name="Comedy" value="Comedy">Comedy</option>
     <option  name="Horror-crime-Mystery" value="Horror-crime-Mystery" <%= book.category === 'Horror-crime-Mystery' ? 'Selected' : '' %>>Horror-crime-Mystery</option>
     <option  name="SCI-Fiction" value="SCI-Fiction" <%= book.category === 'SCI-Fiction' ? 'Selected' : '' %> >SCI-Fiction</option>
     <option  name="fantasy-fairy tale" value="fantasy-fairy tale" <%= book.category === 'fantasy-fairy tale' ? 'Selected' : '' %>>fantasy-fairy tale</option>
     <option  name="movie books" value="movie books" <%= book.category === 'movie books' ? 'Selected' : '' %>>movie books</option>
-    <option  name="drama-romance" value="drama-romance"  <%= book.category === 'drama-romance' ? 'Selected' : '' %> >drama-romance</option>
+    <option  name="romance" value="romance"  <%= book.category === 'romance' ? 'Selected' : '' %> >romance</option>
     <option  name="kids" value="kids" <%= book.category === 'kids' ? 'Selected' : '' %>>kids</option>
-    <option  name="self learning" value="self learning" <%= book.category === 'self learning' ? 'Selected' : '' %>>self learning</option>
+    <option  name="drama" value="drama" <%= book.category === 'drama' ? 'Selected' : '' %>>drama</option>
     <option  name="novels" value="novels" <%= book.category === 'novels' ? 'Selected' : '' %>>novels</option>
   </select>
 
-  <label for="author">Author</label>
-  <input name="author" type="text" value="<%= book.author %>">
+  <label for="author" class="label-new">Author</label>
+  <input name="author" type="text" value="<%= book.author %>" class="input-form">
 
-  <label for="date">Publish Date</label>
-  <input name="date" type="date" value="<%= book.date %>">
-
-
-  <label for="summary">Book Summary</label>
-  <input name="summary" type="text" value="<%= book.summary %>">
+  <label for="date" class="label-new">Publish Date</label>
+  <input name="date" type="date" value="<%= book.date %>" class="input-form">
 
 
-  <label for="poster">Poster</label>
-  <input name="poster" type="text" value="<%= book.poster %>">
+  <label for="summary" class="label-new">Book Summary</label>
+  <input name="summary" type="text" value="<%= book.summary %>" class="input-form">
 
 
-  <label for="available">Available at</label>
-  <input name="available" type="text" value="<%= book.available %>">
+  <label for="poster" class="label-new">Poster</label>
+  <input name="poster" type="text" value="<%= book.poster %>" class="input-form">
 
-  <button type="submit">Update Book</button>
-</form>
+
+  <label for="available" class="label-new">Available at</label>
+  <input name="available" type="text" value="<%= book.available %>" class="input-form">
+<br>
+  <button type="submit" id="add" class="input-form">Update Book</button>
+</form></div>
 <%- include('../partials/footer') %>
