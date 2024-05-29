@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<form action="/requests/submit" method="post">
+  
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  
+  <label for="name">reason:</label>
+  <textarea id="reason" name="reason" required></textarea>
+  
+  <input type="submit" value="Submit">
+</form>
+
+<%- include('../partials/footer') %>

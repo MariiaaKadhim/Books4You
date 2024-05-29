@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <title><%= title %></title> -->
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  
-    <header>
-      
-      <img src="https://bcassetcdn.com/social/apue6p0mhh/preview.png" id="logo">
+
+<body>
+  <header>
+
+      <a href="/"><img src="https://bcassetcdn.com/social/apue6p0mhh/preview.png" id="logo"></a>
+      <%if  (/^\/books(?!\/show)/.test(path)){%>
       <input type="text" name="query" id="Search" placeholder="Search">
+      <%}%>
       
       <%if (user) {%>
         <%if (user.type) {%>
-         <button class="log"> <a href="/admins/new">Add books</a></button>
-         <button class="log"><a href="/admins" class="panel">Admin panel</a></button>
+
+        <button class="log">
+          <a href="/admins" class="panel">Admin panel</a>
+        </button>
+
+        <% if (path === "/admins" ){%>
+          <button class="log">
+            <a href="/admins/new">Add books</a>
+          </button>
+          <a href="/requests/adminReview">Review Requests</a>
         <%}%>
-      
-      
-          
+        <%}%>
+
+        <a href="/requests/questions" class="panel">
+          <button>Admin Request</button>
+          </a>
+
+        <a href="/lists/index">My Book List</a>
         <!-- <div> -->
-         <div class="log user"><h3> <%=user.name.split(" ")[0]%></h3>
+        <div class="log user">
+          <h3> <%=user.name.split(" ")[0]%></h3>
         </div>
-          <a href="/logout"><button class="log log-font" > Log out</button> </a>
+        <a href="/logout">
+          <button class="log log-font" > Log out</button>
+        </a>
         <!-- </div> -->
-        <%} else {%>
+
+        <%} 
+        else {%>
         <a href="/auth/google">
           <button class="log flx log-font">
-          <p>Login</p>
-          <img src="https://i.imgur.com/FHjYyi0.png" class="google">
-        </button>
-          </a>
-        
-        <%}%>
-        
+            <p>Login</p>
+            <img src="https://i.imgur.com/FHjYyi0.png" class="google">
+          </button>
+        </a>
+  
+    <%}%>
+
     </header>
-    
- <body>
+
+

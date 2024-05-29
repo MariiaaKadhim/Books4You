@@ -14,6 +14,7 @@ require('./config/passport')
 var indexRouter = require('./routes/index')
 var adminsRouter = require('./routes/admins')
 var listsRouter = require('./routes/lists')
+var requestsRouter = require('./routes/requests')
 var booksRouter = require('./routes/books')
 var reviewsRouter = require('./routes/reviews')
 
@@ -41,7 +42,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(function (req, res, next) {
-  console.log(JSON.stringify(req.user, null, 2))
+  // console.log(JSON.stringify(req.user, null, 2))
   res.locals.user = req.user
   next()
 })
@@ -49,8 +50,9 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter)
 app.use('/admins', adminsRouter)
 app.use('/lists', listsRouter)
+app.use('/requests', requestsRouter)
 app.use('/books', booksRouter)
-app.use('/reviews', reviewsRouter)
+app.use('/', reviewsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
