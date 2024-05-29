@@ -15,7 +15,7 @@ const submitRequest = async (req, res) => {
     })
 
     await newRequest.save()
-    res.redirect('/requests/success')
+    res.redirect('../')
   } catch (err) {
     res.status(400).send('Error saving data: ' + err)
   }

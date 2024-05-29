@@ -28,9 +28,8 @@
      
      
      <tr>
-       <th>Available at </th>
-       <td><a href="<%= book.available %>">
-        Click to Find book here
+       <td><a class="find-at" href="<%= book.available %>">
+        Available here
       </a></td>
       </tr>
     </table>
@@ -46,13 +45,14 @@
 <%if (user) {%>
   <%if (user.type) {%>
     <div class="buttons-admin">
-    <a href="/admins/<%= book._id %>/edit">
+    <a class="for-hover" href="/admins/<%= book._id %>/edit">
       <button id="confirm-yes">Edit book</button>
     </a>
 
     <form id="delete-form" action="/admins/<%= book._id %>?_method=DELETE" method="POST">
       <button type="submit" class="delete-book" id="confirm-yes">Delete Book</button>
-    </form></div>
+    </form>
+  </div>
   <%}}%></div>
 <div class="data">
  <tr>
