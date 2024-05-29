@@ -1,4 +1,3 @@
-
 <%- include('../partials/header') %>
 <h1 id="hed"> Book Details</h1>
 <span>
@@ -12,6 +11,11 @@
 <img src="<%= book.poster %>" id="book-pic">
 <table id="datas">
 <tr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Category</th>
      <td><%= book.category %></td>
 
@@ -44,6 +48,28 @@
 <%if (user) {%>
   <%if (user.type) {%>
     <div class="buttons-admin">
+      <th>Publish Date</th>
+      <th>Summary</th>
+      <th>Poster</th>
+      <th>Available at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.category %></td>
+      <td><%= book.author %></td>
+      <td><%= book.publishDate.toLocaleDateString() %></td>
+      <td><%= book.summary %></td>
+      <td><img src="<%= book.poster %>" alt="<%= book.name %> poster"></td>
+      <td><a href="<%= book.available %>"><%= book.available %></a></td>
+      <td><%= book.review %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% if (user) { %>
+  <% if (user.type) { %>
     <a href="/admins/<%= book._id %>/edit">
       <button id="confirm-yes">Edit book</button>
     </a>
@@ -101,36 +127,35 @@
 <br>
 
     
+
 <script>
   const confirm = (event) => {
-    event.preventDefault()
-    const confirmDiv = document.createElement('div')
-    confirmDiv.classList.add('confirm-dialog')
+    event.preventDefault();
+    const confirmDiv = document.createElement('div');
+    confirmDiv.classList.add('confirm-dialog');
     
     confirmDiv.innerHTML = `
     <div class="confirm">
       <h4>Are you sure you want to delete this book?</h4>
       <button id="confirm-yes">Yes</button>
       <button id="confirm-no">No</button>
-      </div>
-    `
+
     document.body.appendChild(confirmDiv);
 
-    const confirmYes = document.getElementById('confirm-yes')
-    const confirmNo = document.getElementById('confirm-no')
+    const confirmYes = document.getElementById('confirm-yes');
+    const confirmNo = document.getElementById('confirm-no');
     
     confirmYes.addEventListener('click', () => {
-      document.body.removeChild(confirmDiv)
-      document.getElementById('delete-form').submit()
+      document.body.removeChild(confirmDiv);
+      document.getElementById('delete-form').submit();
     });
 
     confirmNo.addEventListener('click', () => {
-      document.body.removeChild(confirmDiv)
-    })
+      document.body.removeChild(confirmDiv);
+    });
   }
 
-  document.querySelector(".delete-book").addEventListener("click", confirm)
+  document.querySelector(".delete-book").addEventListener("click", confirm);
 </script>
 
-
-  <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
