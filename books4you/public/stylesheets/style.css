@@ -295,3 +295,108 @@ a:hover {
 }
 
 /* ############################################# */
+.blist {
+  background-color: rgb(162, 177, 247);
+  height: 100px;
+  padding: 20px;
+  font-size: 20px;
+}
+.container-list {
+  margin: 20px;
+  background-color: #e6e7ed;
+
+  padding-bottom: 20px;
+}
+#blist {
+  margin-left: 50px;
+}
+ol {
+  background-color: #fdfdfcee;
+  padding: 30px;
+  margin-left: 15%;
+  margin-right: 10%;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 60%;
+}
+#fontbook {
+  font-weight: bold;
+  font-size: 20px;
+}
+#admin-poster {
+  width: 100px;
+  height: 100px;
+}
+#space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail {
+  display: flex;
+  background-color: rgb(213, 228, 236);
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  justify-content: center;
+  border: 2px solid #4071a1;
+}
+#book-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.postername-data {
+  width: 40%;
+}
+.data {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 20px;
+  height: 100%;
+}
+.review {
+  margin-left: 80px;
+}
+.buttons-admin {
+  display: flex;
+  flex-direction: row;
+}
+#datas {
+  padding: 30px;
+}
+.p {
+  font-size: 20px;
+  font-family: serif;
+}
+td {
+  font-family: serif;
+}
+#add-review-form {
+  display: flex;
+}
+.rev {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.confirm {
+  padding: 20px;
+  margin: 20px;
+}
+#confirm-yes {
+  width: 80px;
+  height: 40px;
+  border-radius: 3px;
+}
+#confirm-no {
+  width: 80px;
+  height: 40px;
+  border-radius: 3px;
+}
+#hed {
+  margin-left: 30px;
+}

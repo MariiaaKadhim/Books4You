@@ -1,17 +1,53 @@
 <%- include('../partials/header') %>
-
-<h1> Book Details</h1>
-
+<h1 id="hed"> Book Details</h1>
 <span>
   <a href="/lists/<%=book._id%>">Add to my books list</a>
 </span>
+<div class="detail">
+
+<div class="postername-data">
+<div class="name-poster">
+<h1><%= book.name %></h1>
+<img src="<%= book.poster %>" id="book-pic">
+<table id="datas">
+<tr>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Category</th>
+     <td><%= book.category %></td>
+
+</tr>
+     <tr>
       <th>Author</th>
+     <td><%= book.author %></td>
+    </tr> 
+      <tr><th>publishDate</th>
+      <td><%= book.publishDate.toLocaleDateString() %></td>
+      </tr>
+     
+     
+     <tr>
+       <th>Available at</th>
+       <td><a href="<%= book.available %>">
+        Click to Find book here
+      </a></td>
+      </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+ <br>
+<%if (user) {%>
+  <%if (user.type) {%>
+    <div class="buttons-admin">
       <th>Publish Date</th>
       <th>Summary</th>
       <th>Poster</th>
@@ -35,52 +71,62 @@
 <% if (user) { %>
   <% if (user.type) { %>
     <a href="/admins/<%= book._id %>/edit">
-      <button>Edit book</button>
+      <button id="confirm-yes">Edit book</button>
     </a>
 
     <form id="delete-form" action="/admins/<%= book._id %>?_method=DELETE" method="POST">
-      <button type="submit" class="delete-book">Delete Book</button>
-    </form>
-  <% } %>
-<% } %>
-
-<br><br>
-<h2>Reviews</h2>
-<form id="add-review-form" method="POST" action="/books/<%= book._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <input type="submit" value="Add Review">
-</form>
-
-<% if (book.reviews.length) { {%>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Review</th>
+      <button type="submit" class="delete-book" id="confirm-yes">Delete Book</button>
+    </form></div>
+  <%}}%></div>
+<div class="data">
+ <tr>
+ <th><h1>Summary</h1></th>
+<td><p class="p"><%= book.summary %></p></td>
       </tr>
-    </thead>
-    <tbody>
-      <% book.reviews.forEach(function(review) { %>
-        <tr>
-          <td><%= review.createdAt.toLocaleDateString() %></td>
-          <td><%= review.content %></td>
-          <td>
-            <% if (user.type) { %> 
-              <form action="/books/show/<%= review.id %>/reviews?_method=DELETE" method="POST">
-                <input type="hidden" name="bookId" value=<%= book._id %>>
-                <button type="submit">X</button>
-                  </form>
-                <% } %>
-              <% }) %>
-            <% } %>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Reviews Yet</h5>
-<% } %>
+     
+<div class="feedback">
+    <h1>Reviews</h1>
+    <form id="add-review-form" method="POST" action="/books/<%= book._id %>/reviews">
+      <h4>Review:</h4>
+      <textarea name="content"></textarea>
+      <input type="submit" value="Add Review">
+    </form>
+
+    <% if (book.reviews.length) { %>
+      <table>
+
+        <thead class="rev">
+          <tr>
+            <th>Date</th>
+            <th>Review</th>
+          </tr>
+        </thead>
+
+        <tbody class="rev">
+          <br>
+          <% book.reviews.forEach(function(r) { %>
+            
+              <td><%= r.createdAt.toLocaleDateString() %></td>
+             
+              <td><%= r.content %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+    <% } 
+    else { %>
+      <h5>No Reviews Yet</h5>
+    <% } %>
+
+</div></div>
+
+</div >
+
+</div>
+<br>
+
+    
 
 <script>
   const confirm = (event) => {
@@ -89,10 +135,11 @@
     confirmDiv.classList.add('confirm-dialog');
     
     confirmDiv.innerHTML = `
-      <p>Are you sure you want to delete this book?</p>
+    <div class="confirm">
+      <h4>Are you sure you want to delete this book?</h4>
       <button id="confirm-yes">Yes</button>
       <button id="confirm-no">No</button>
-    `;
+
     document.body.appendChild(confirmDiv);
 
     const confirmYes = document.getElementById('confirm-yes');

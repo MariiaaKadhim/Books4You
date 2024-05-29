@@ -1,14 +1,21 @@
 <%- include('../partials/header') %>
+<div class="container-list">
+    <div class="blist">
+<h1 id="blist">Added Books List</h1>
+</div>
 
-<h1>Added Books List</h1>
-
-<ul>
 <% books.forEach(book => { %>
-    <li>
-        <a href="/books/show/<%= book._id %>" ><%= book.name%></a>
-    </li>
-<% }); %>
-</ul>
+  <ol id="fontbook">
+        <a href="/books/show/<%= book._id %>" >
+            
+                <li id="space"><%= book.name%>
+                    <img src="<%= book.poster %>" id="admin-poster">
+             </li>
+</ol>
 
+</a> 
+<% }); %>
+
+</div>
 
 <%- include('../partials/footer') %>
