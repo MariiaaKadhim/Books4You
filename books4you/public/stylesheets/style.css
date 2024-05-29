@@ -59,6 +59,12 @@ header {
   font-size: 19px;
 }
 
+.username {
+  text-decoration: none;
+  color: white;
+  font-size: 19px;
+}
+
 .header-link:hover {
   color: #d4af37;
   cursor: pointer;
@@ -435,4 +441,20 @@ td {
 .add-to-books-list img {
   height: 60px;
   width: 60px;
+}
+.container-acc {
+  margin: 20px;
+  background-color: #e6e7ed;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.acc-rej {
+  display: flex;
+  flex-direction: row;
+}
+.no-dec {
+  list-style: none;
 }

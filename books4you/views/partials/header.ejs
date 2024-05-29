@@ -36,10 +36,8 @@
     
                 <a class="header-link" href="/lists/index">My Book List</a>
                 
-                <div class="user-info">
-                    <div class="header-link username"><%= user.name.split(" ")[0] %></div>
+                    <div class=" username"><%= user.name.split(" ")[0] %></div>
                     <a class="header-link logout-button" href="/logout">Log out</a>
-                </div>
     <% } else { %>
         <div class="login-butt-container">
             <a class="login-butt" href="/auth/google">Login</a>
