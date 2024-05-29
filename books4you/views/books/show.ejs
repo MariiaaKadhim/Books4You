@@ -47,37 +47,49 @@
     </form>
   <%}}%>
 
-    <h2>Reviews</h2>
-    <form id="add-review-form" method="POST" action="/books/<%= book._id %>/reviews">
-      <label>Review:</label>
-      <textarea name="content"></textarea>
-      <input type="submit" value="Add Review">
-    </form>
-
-    <% if (book.reviews.length) { %>
-      <table>
-
-        <thead>
+  <br><br><h2>Reviews</h2>
+  <form id="add-review-form" method="POST"
+    action="/books/<%= movie._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Review">
+  </form>
+  
+  <% if (book.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          
+          <th>Date</th>
+          <th>Review</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% book.reviews.forEach(function(review) { %>
           <tr>
-            <th>Date</th>
-            <th>Review</th>
+           
+            <td><%= review.createdAt.toLocaleDateString() %></td>
+            <td><%= review.content %></td>
+            <td>
+
+              <%if (user) ({%>
+                <%if (user.type) {%>
+              <% if (user?._id.equals(review.user)) { %>
+                <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+              <% } }%>
+            </td>
           </tr>
-        </thead>
+        <% }) %>
+      </tbody>
+    </table>
+    <%})%>
 
-        <tbody>
-          <% book.reviews.forEach(function(r) { %>
-            <tr>
-              <td><%= r.createdAt.toLocaleDateString() %></td>
-              <td><%= r.content %></td>
-            </tr>
-          <% }); %>
-        </tbody>
-      </table>
-
-    <% } 
-    else { %>
-      <h5>No Reviews Yet</h5>
-    <% } %>
+  <% } else { %>
+    <h5>No Reviews Yet</h5>
+  <% } %>
 
     
 <script>
@@ -91,7 +103,7 @@
       <button id="confirm-yes">Yes</button>
       <button id="confirm-no">No</button>
     `
-    document.body.appendChild(confirmDiv);
+    document.body.appendChild(confirmDiv)
 
     const confirmYes = document.getElementById('confirm-yes')
     const confirmNo = document.getElementById('confirm-no')
@@ -99,7 +111,7 @@
     confirmYes.addEventListener('click', () => {
       document.body.removeChild(confirmDiv)
       document.getElementById('delete-form').submit()
-    });
+    })
 
     confirmNo.addEventListener('click', () => {
       document.body.removeChild(confirmDiv)

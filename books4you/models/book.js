@@ -25,7 +25,7 @@ const bookSchema = new Schema(
     available: String,
     // rating: Number,
     userid: { type: Schema.Types.ObjectId, ref: "User" },
-    reviews: [reviewsSchema],
+    reviews: [reviewSchema],
   },
   {
     timestamps: true,
