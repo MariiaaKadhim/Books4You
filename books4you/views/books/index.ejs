@@ -16,7 +16,7 @@
         books.forEach(book => {
             const title = book.getAttribute('data-title');
             if (title.includes(filter)) {
-                book.parentElement.style.display = 'list-item';
+                book.parentElement.style.display = 'flex';
             } else {
                 book.parentElement.style.display = 'none';
             }

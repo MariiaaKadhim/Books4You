@@ -7,7 +7,7 @@
     <% categories.forEach(category => { %>
         <a href="/books/<%= category.category%>" class="book-item">
           <img src="<%= category.catImg %>" id="catgory">
-          <%= category.category%>
+          <%= (category.category).toUpperCase() %>
         </a>
       <% }); %>
   </div>
