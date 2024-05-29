@@ -4,30 +4,37 @@
     background-color:  #F5F5F5
     ;
     text-align: center
+  
+  
   ;
     align-items: center;
     height: 80%;
+    
   }
   footer{
     height: 70px;
+    
   }
   .book-boxes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 40px;
+   
       height: 70%;
       padding: 20px;
+     
   }
   ul{
     list-style: none;
   }
   .book-item {
-      background-color: #FDFDFC  ;
+      background-color: #fdfdfc  ;
       padding: 10px;
       border-radius: 10px;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       height: 100%;
+  
   }
   .title-header{
   font-family: serif;
@@ -39,19 +46,24 @@
   #cat-text{
     font-family: serif;
   }
-  </style>
   
+  </style>
   <%- include('./partials/header') %>
   <div class="container">
   <h1 class="title-header">Categories</h1>
+  
+  
   <div class="book-boxes">
   <% categories.forEach(category => { %>
+    
       <div class="book-item">
       <img src="<%= category.catImg %>" id="catgory">
        <ul> <li><a href="/users/<%= category.category%>"></li>
         <h1><%= category.category%></h1>
       </a></ul>
     </div>
+   
     <% }); %>
     </div></div>
+  
   <%- include('./partials/footer') %>

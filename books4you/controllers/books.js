@@ -1,18 +1,18 @@
-const Book = require('../models/book')
+const Book = require("../models/book")
 
 //This function will show all the categories on the main page.
 async function index(req, res) {
   try {
     const category = req.params.category
     let Books = await Book.find({ category: category })
-    res.render('books/index', {
+    res.render("books/index", {
       Books,
-      title: 'Books Page',
-      path: req.originalUrl
+      title: "Books Page",
+      path: req.originalUrl,
     })
   } catch (e) {
     console.error(e)
-    res.redirect('/books/index')
+    res.redirect("/books/index")
   }
 }
 
@@ -20,10 +20,10 @@ async function index(req, res) {
 async function show(req, res) {
   const book = await Book.findById(req.params.id)
   // console.log('The show page is working')
-  res.render('books/show', { title: 'Book', book, path: req.originalUrl })
+  res.render("books/show", { title: "Book", book, path: req.originalUrl })
 }
 
 module.exports = {
   index,
-  show
+  show,
 }

@@ -1,5 +1,5 @@
-const User = require('../models/user')
-const Book = require('../models/book')
+const User = require("../models/user")
+const Book = require("../models/book")
 
 //This function will show all the books in the books list of the user.
 async function index(req, res) {
@@ -9,22 +9,22 @@ async function index(req, res) {
 
     // console.log('These are the user infromations' + user.list)
     const Mybooks = await Book.find({
-      _id: { $in: user.list }
+      _id: { $in: user.list },
     })
 
     let books = Mybooks.map((book) => ({
       poster: book.poster,
-      name: book.name
+      name: book.name,
     }))
-    res.render('lists/index', {
+    res.render("lists/index", {
       books,
-      title: 'User Books List',
-      path: req.originalUrl
+      title: "User Books List",
+      path: req.originalUrl,
     })
     // console.log(JSON.stringify(Mybooks))
   } catch (e) {
     console.error(e)
-    res.redirect('/lists/index')
+    res.redirect("/lists/index")
   }
 }
 
@@ -36,7 +36,7 @@ async function add(req, res) {
     const book = await User.findById(req.user.id)
     book.list.push(req.params.id)
     await book.save()
-    res.redirect('/lists/index')
+    res.redirect("/lists/index")
   } catch (e) {
     console.error(e)
     // res.redirect('lists/index')
@@ -45,5 +45,5 @@ async function add(req, res) {
 
 module.exports = {
   index,
-  add
+  add,
 }
