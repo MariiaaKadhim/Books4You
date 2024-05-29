@@ -4,13 +4,13 @@
 
 ### By: Maria Kadhim, Amal Abduljalil, Jawad Alaa, Jassim Jawad.
 
-#### [GitHub](https://github.com/MariiaaKadhim) | [LinkedIn](https://www.linkedin.com/in/maria-kadhim-1a38852b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+#### Mariia's: [GitHub](https://github.com/MariiaaKadhim) | [LinkedIn](https://www.linkedin.com/in/maria-kadhim-1a38852b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
-#### [GitHub](https://github.com/Amal229) | [LinkedIn](https://www.linkedin.com/in/amal-abduljalil-9225502bb/)
+#### Amal's: [GitHub](https://github.com/Amal229) | [LinkedIn](https://www.linkedin.com/in/amal-abduljalil-9225502bb/)
 
-#### [GitHub](https://github.com/jasimSalman) | [LinkedIn]()
+#### Jasim's: [GitHub](https://github.com/jasimSalman) | [LinkedIn](https://www.linkedin.com/in/jasimsalman1/)
 
-#### [GitHub](https://github.com/jawadbri) | [LinkedIn](https://www.linkedin.com/in/jawadalberri/)
+#### Jawad's: [GitHub](https://github.com/jawadbri) | [LinkedIn](https://www.linkedin.com/in/jawadalberri/)
 
 ---
 
