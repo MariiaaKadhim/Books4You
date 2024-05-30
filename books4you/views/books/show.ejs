@@ -46,11 +46,11 @@
   <%if (user.type) {%>
     <div class="buttons-admin">
     <a class="for-hover" href="/admins/<%= book._id %>/edit">
-      <button id="confirm-yes">Edit book</button>
+      <button id="confirm-yes1">Edit book</button>
     </a>
 
     <form id="delete-form" action="/admins/<%= book._id %>?_method=DELETE" method="POST">
-      <button type="submit" class="delete-book" id="confirm-yes">Delete Book</button>
+      <button type="submit" class="delete-book" id="confirm-yes2">Delete Book</button>
     </form>
   </div>
   <%}}%></div>
@@ -62,10 +62,13 @@
      
 <div class="feedback">
     <h1>Reviews</h1>
+    <%if(user) {%>
     <form id="add-review-form" method="POST" action="/books/<%= book._id %>/reviews">
       <textarea name="content"></textarea>
       <input type="submit" value="Add Review">
     </form>
+    <%}%>
+  
 
     <% if (book.reviews.length) { %>
       <table>

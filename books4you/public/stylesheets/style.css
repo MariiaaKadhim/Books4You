@@ -454,7 +454,9 @@ td {
   cursor: pointer;
 }
 
-#confirm-yes {
+#confirm-yes,
+#confirm-yes1,
+#confirm-yes2 {
   width: 119px;
   height: 40px;
   border-radius: 3px;
